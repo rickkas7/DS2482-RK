@@ -1,0 +1,60 @@
+\hypertarget{class_d_s2482_device_reset}{}\section{D\+S2482\+Device\+Reset Class Reference}
+\label{class_d_s2482_device_reset}\index{D\+S2482\+Device\+Reset@{D\+S2482\+Device\+Reset}}
+
+
+Resets the \mbox{\hyperlink{class_d_s2482}{D\+S2482}}.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Device\+Reset\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_device_reset}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}} \& \mbox{\hyperlink{class_d_s2482_device_reset_a4250bda2cf91a9c21c9ac4844e05689b}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Resets the \mbox{\hyperlink{class_d_s2482}{D\+S2482}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_reset_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_device_reset_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Resets the \mbox{\hyperlink{class_d_s2482}{D\+S2482}}. 
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_device_reset_a4250bda2cf91a9c21c9ac4844e05689b}\label{class_d_s2482_device_reset_a4250bda2cf91a9c21c9ac4844e05689b}} 
+\index{D\+S2482\+Device\+Reset@{D\+S2482\+Device\+Reset}!run@{run}}
+\index{run@{run}!D\+S2482\+Device\+Reset@{D\+S2482\+Device\+Reset}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}} \& D\+S2482\+Device\+Reset\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}} \&, int status)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Resets the \mbox{\hyperlink{class_d_s2482}{D\+S2482}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to.\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded.\\
+\hline
+\end{DoxyParams}
+This call executes asynchronously. The completion function is called when complete or an error occurs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

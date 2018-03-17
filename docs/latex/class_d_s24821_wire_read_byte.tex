@@ -1,0 +1,49 @@
+\hypertarget{class_d_s24821_wire_read_byte}{}\section{D\+S24821\+Wire\+Read\+Byte Class Reference}
+\label{class_d_s24821_wire_read_byte}\index{D\+S24821\+Wire\+Read\+Byte@{D\+S24821\+Wire\+Read\+Byte}}
+
+
+Low-\/level class to read a byte from the 1-\/wire bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S24821\+Wire\+Read\+Byte\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s24821_wire_read_byte}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_read_byte_a958288a6d8d3e7c970e668099dce3b82}\label{class_d_s24821_wire_read_byte_a958288a6d8d3e7c970e668099dce3b82}} 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_read_byte_a958288a6d8d3e7c970e668099dce3b82}{get\+Value}} () const
+\begin{DoxyCompactList}\small\item\em Get the value that was read. Also is included as a parameter to the callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_read_byte_aa7e399c9eca3042d9d3002cd53516d42}\label{class_d_s24821_wire_read_byte_aa7e399c9eca3042d9d3002cd53516d42}} 
+static \mbox{\hyperlink{class_d_s24821_wire_read_byte}{D\+S24821\+Wire\+Read\+Byte}} \& \mbox{\hyperlink{class_d_s24821_wire_read_byte_aa7e399c9eca3042d9d3002cd53516d42}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, std\+::function$<$ void(\mbox{\hyperlink{class_d_s24821_wire_read_byte}{D\+S24821\+Wire\+Read\+Byte}} \&, int, uint8\+\_\+t)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Low-\/level call to read a byte from the 1-\/wire bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_read_byte_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s24821_wire_read_byte_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Low-\/level class to read a byte from the 1-\/wire bus. 
+
+You will likely use the higher-\/level functions instead.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

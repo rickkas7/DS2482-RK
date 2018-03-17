@@ -1,0 +1,45 @@
+\hypertarget{class_d_s2482_device_list_static}{}\section{D\+S2482\+Device\+List\+Static$<$ S\+I\+ZE $>$ Class Template Reference}
+\label{class_d_s2482_device_list_static}\index{D\+S2482\+Device\+List\+Static$<$ S\+I\+Z\+E $>$@{D\+S2482\+Device\+List\+Static$<$ S\+I\+Z\+E $>$}}
+
+
+Holds an array of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects of a given size.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Device\+List\+Static$<$ S\+I\+ZE $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_device_list_static}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_static_ae3709f01bf5902dbeaf00a55772cdc32}\label{class_d_s2482_device_list_static_ae3709f01bf5902dbeaf00a55772cdc32}} 
+\mbox{\hyperlink{class_d_s2482_device_list_static_ae3709f01bf5902dbeaf00a55772cdc32}{D\+S2482\+Device\+List\+Static}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a static list of devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t S\+I\+ZE$>$\newline
+class D\+S2482\+Device\+List\+Static$<$ S\+I\+Z\+E $>$}
+
+Holds an array of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects of a given size. 
+
+You normally use this class to allocate the array on the heap, stack, or as a class member. You need to know the maximum size in order to use this; the actual number of devices can be less than the maximum size.
+
+The overhead is 16 bytes for each device. Note that size is in number of devices, not bytes.
+
+It\textquotesingle{}s typically used like this\+:
+
+D\+S2482\+Device\+List\+Static$<$10$>$ device\+List;
+
+This allocates a variable device\+List that can hold up to 10 devices. You can include a device list as a global variable, local variable (stack-\/allocated), a class member variable, or on the heap. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\end{DoxyCompactItemize}

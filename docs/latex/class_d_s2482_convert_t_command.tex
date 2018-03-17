@@ -1,0 +1,78 @@
+\hypertarget{class_d_s2482_convert_t_command}{}\section{D\+S2482\+Convert\+T\+Command Class Reference}
+\label{class_d_s2482_convert_t_command}\index{D\+S2482\+Convert\+T\+Command@{D\+S2482\+Convert\+T\+Command}}
+
+
+Low-\/level class to send a C\+O\+N\+V\+E\+R\+T\+\_\+T command.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Convert\+T\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_convert_t_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \& \mbox{\hyperlink{class_d_s2482_convert_t_command_a1813c4f607fceab23e6cd1797db8cf8f}{with\+Conversion\+Size}} (int value)
+\begin{DoxyCompactList}\small\item\em Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_convert_t_command_aef705b42ffe4a90f35ddc11ca713893a}\label{class_d_s2482_convert_t_command_aef705b42ffe4a90f35ddc11ca713893a}} 
+\mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \& \mbox{\hyperlink{class_d_s2482_convert_t_command_aef705b42ffe4a90f35ddc11ca713893a}{with\+Parasitic\+Power}} (bool value=true)
+\begin{DoxyCompactList}\small\item\em Sets whether to use parasitic power or not. The default is false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \& \mbox{\hyperlink{class_d_s2482_convert_t_command_a81579d588ee79fadc7c41cd0bcea37f5}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&addr, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Sends a C\+O\+N\+V\+E\+R\+T\+\_\+T command -\/ used internally. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_convert_t_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_convert_t_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Low-\/level class to send a C\+O\+N\+V\+E\+R\+T\+\_\+T command. 
+
+This is a low-\/level command to send a ConvertT command to the D\+S18\+B20s that only does the conversion but does not read the result. You\textquotesingle{}ll typically want to use \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} or \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} instead.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_convert_t_command_a81579d588ee79fadc7c41cd0bcea37f5}\label{class_d_s2482_convert_t_command_a81579d588ee79fadc7c41cd0bcea37f5}} 
+\index{D\+S2482\+Convert\+T\+Command@{D\+S2482\+Convert\+T\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Convert\+T\+Command@{D\+S2482\+Convert\+T\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \& D\+S2482\+Convert\+T\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&}]{addr,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} \&, int status)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sends a C\+O\+N\+V\+E\+R\+T\+\_\+T command -\/ used internally. 
+
+Normally you use \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} instead of this low-\/level function. \mbox{\Hypertarget{class_d_s2482_convert_t_command_a1813c4f607fceab23e6cd1797db8cf8f}\label{class_d_s2482_convert_t_command_a1813c4f607fceab23e6cd1797db8cf8f}} 
+\index{D\+S2482\+Convert\+T\+Command@{D\+S2482\+Convert\+T\+Command}!with\+Conversion\+Size@{with\+Conversion\+Size}}
+\index{with\+Conversion\+Size@{with\+Conversion\+Size}!D\+S2482\+Convert\+T\+Command@{D\+S2482\+Convert\+T\+Command}}
+\subsubsection{\texorpdfstring{with\+Conversion\+Size()}{withConversionSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}}\& D\+S2482\+Convert\+T\+Command\+::with\+Conversion\+Size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The number of bits the D\+S18\+B20s are configured for. The constants are defined in the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} class and are one of\+: C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+9\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+10\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+11\+B\+IT, or C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. At 9 bits, the resolution is 1/2 degrees C. At 12 bits, the resolution is 1/16 degrees C. The factory default hardware setting is 12 bits. Note that you must have use D\+S2482\+Set\+Config to set the conversion size first; just reducing the value in this call without changing the D\+S18\+B20 configuration will result in invalid readings.\\
+\hline
+\end{DoxyParams}
+In the unusual situation that you have sensors of different bit settings, select the largest bit setting. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

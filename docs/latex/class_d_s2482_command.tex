@@ -1,0 +1,280 @@
+\hypertarget{class_d_s2482_command}{}\section{D\+S2482\+Command Class Reference}
+\label{class_d_s2482_command}\index{D\+S2482\+Command@{D\+S2482\+Command}}
+
+
+Useful static constants, but the class is mostly just a base class for other commands.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_d_s2482_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s2482_command_afafdd341bb8dbddf755a1ba2aaee79db}{D\+S2482\+Command}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}})
+\begin{DoxyCompactList}\small\item\em Construct a command object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_abc7ef041a3124b81183a9e37ab29b5bd}\label{class_d_s2482_command_abc7ef041a3124b81183a9e37ab29b5bd}} 
+virtual \mbox{\hyperlink{class_d_s2482_command_abc7ef041a3124b81183a9e37ab29b5bd}{$\sim$\+D\+S2482\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a21cf2a349a6f7089ef2e099d83993b15}\label{class_d_s2482_command_a21cf2a349a6f7089ef2e099d83993b15}} 
+virtual int \mbox{\hyperlink{class_d_s2482_command_a21cf2a349a6f7089ef2e099d83993b15}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Overridden by subclasses to do things; typically to run the state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_command_a269ffc6a2090135a5e5909525598a21d}\label{class_d_s2482_command_a269ffc6a2090135a5e5909525598a21d}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a269ffc6a2090135a5e5909525598a21d}{R\+E\+S\+U\+L\+T\+\_\+\+W\+O\+R\+K\+I\+NG}} = 0
+\begin{DoxyCompactList}\small\item\em Asynchronous call still in progress. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}\label{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} = 1
+\begin{DoxyCompactList}\small\item\em Asynchronous call completed successfully. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a07c18f39af72106ebf86b0cdfb315a83}\label{class_d_s2482_command_a07c18f39af72106ebf86b0cdfb315a83}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a07c18f39af72106ebf86b0cdfb315a83}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+E\+N\+D\+T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+B\+U\+S\+Y\+\_\+\+E\+R\+R\+OR}} = -\/1
+\begin{DoxyCompactList}\small\item\em Busy timeout upon entering end\+Transmission (I2C error) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a5a96cae08078b71152cba451e580e812}\label{class_d_s2482_command_a5a96cae08078b71152cba451e580e812}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a5a96cae08078b71152cba451e580e812}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+E\+N\+D\+T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+\_\+\+E\+R\+R\+OR}} = -\/2
+\begin{DoxyCompactList}\small\item\em Start bit generation timeout (I2C error) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a86ab4e71883e0d7aafec142fe1010c35}\label{class_d_s2482_command_a86ab4e71883e0d7aafec142fe1010c35}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a86ab4e71883e0d7aafec142fe1010c35}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+E\+N\+D\+T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}} = -\/3
+\begin{DoxyCompactList}\small\item\em End of address transmission timeout (I2C error) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a84eb07550c7499ea510a32e4d968ed79}\label{class_d_s2482_command_a84eb07550c7499ea510a32e4d968ed79}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a84eb07550c7499ea510a32e4d968ed79}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+E\+N\+D\+T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR}} = -\/4
+\begin{DoxyCompactList}\small\item\em Data byte transfer timeout (I2C error) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a20e56c958623278decd13f644c5f680a}\label{class_d_s2482_command_a20e56c958623278decd13f644c5f680a}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a20e56c958623278decd13f644c5f680a}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+E\+N\+D\+T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+A\+F\+T\+E\+R\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR}} = -\/5
+\begin{DoxyCompactList}\small\item\em Data byte transfer succeeded, busy timeout immediately after (I2C error) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aa506510a75cc5ea560b105b03aa332f1}\label{class_d_s2482_command_aa506510a75cc5ea560b105b03aa332f1}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_aa506510a75cc5ea560b105b03aa332f1}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+M\+E\+O\+UT}} = -\/100
+\begin{DoxyCompactList}\small\item\em I2C request\+From did not return bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a99ae8c5d50b7e7564cc2461bb96984d9}\label{class_d_s2482_command_a99ae8c5d50b7e7564cc2461bb96984d9}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a99ae8c5d50b7e7564cc2461bb96984d9}{R\+E\+S\+U\+L\+T\+\_\+\+I2\+C\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+T\+I\+M\+E\+O\+UT}} = -\/101
+\begin{DoxyCompactList}\small\item\em An I2C command timed out. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a68f67a7645f16cdb8a4c88eeda6c711c}\label{class_d_s2482_command_a68f67a7645f16cdb8a4c88eeda6c711c}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a68f67a7645f16cdb8a4c88eeda6c711c}{R\+E\+S\+U\+L\+T\+\_\+1\+W\+I\+R\+E\+\_\+\+S\+H\+O\+RT}} = -\/200
+\begin{DoxyCompactList}\small\item\em On a 1-\/wire bus reset, a short was detected (SD flag set) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ad0e7e2dd735bcca35f08f221d0deb9fd}\label{class_d_s2482_command_ad0e7e2dd735bcca35f08f221d0deb9fd}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_ad0e7e2dd735bcca35f08f221d0deb9fd}{R\+E\+S\+U\+L\+T\+\_\+1\+W\+I\+R\+E\+\_\+\+B\+U\+SY}} = -\/201
+\begin{DoxyCompactList}\small\item\em The previous 1-\/wire command had not completed yet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a9245acf172ffaa7c956e4de5d405c7e8}\label{class_d_s2482_command_a9245acf172ffaa7c956e4de5d405c7e8}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a9245acf172ffaa7c956e4de5d405c7e8}{R\+E\+S\+U\+L\+T\+\_\+1\+W\+I\+R\+E\+\_\+\+N\+O\+\_\+\+D\+E\+V\+I\+CE}} = -\/202
+\begin{DoxyCompactList}\small\item\em No device on the 1-\/wire bus when doing a 1-\/wire send address (no presence pulse detected) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aa1d0b42dd911092678874aa976f4830f}\label{class_d_s2482_command_aa1d0b42dd911092678874aa976f4830f}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_aa1d0b42dd911092678874aa976f4830f}{R\+E\+S\+U\+L\+T\+\_\+\+T\+O\+O\+\_\+\+M\+A\+N\+Y\+\_\+\+R\+E\+T\+R\+I\+ES}} = -\/300
+\begin{DoxyCompactList}\small\item\em Specified number of retries exceeded without getting a response with a valid C\+RC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a1cdbef7fe0719f81be99c61c1e30add8}\label{class_d_s2482_command_a1cdbef7fe0719f81be99c61c1e30add8}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a1cdbef7fe0719f81be99c61c1e30add8}{R\+E\+S\+U\+L\+T\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+F\+A\+I\+L\+ED}} = -\/301
+\begin{DoxyCompactList}\small\item\em During a 1-\/wire search bus, got an invalid set of bits returned. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a720edc489f87ff11c34fdc786857ee29}\label{class_d_s2482_command_a720edc489f87ff11c34fdc786857ee29}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a720edc489f87ff11c34fdc786857ee29}{R\+E\+S\+U\+L\+T\+\_\+\+S\+E\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+F\+A\+I\+L\+ED}} = -\/303
+\begin{DoxyCompactList}\small\item\em A D\+S2482-\/800 set channel operation failed to set the channel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a5a192d23dad95a26611402a55d9e37f5}\label{class_d_s2482_command_a5a192d23dad95a26611402a55d9e37f5}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a5a192d23dad95a26611402a55d9e37f5}{T\+R\+I\+P\+L\+E\+T\+\_\+\+C\+MD}} = 0x78
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a8f01be9982737502ef349f739ababdd3}\label{class_d_s2482_command_a8f01be9982737502ef349f739ababdd3}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a8f01be9982737502ef349f739ababdd3}{S\+I\+N\+G\+L\+E\+\_\+1\+W\+I\+R\+E\+\_\+\+B\+I\+T\+\_\+\+C\+MD}} = 0x87
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ad41007ba69370aa9a3d0982b7bebdb97}\label{class_d_s2482_command_ad41007ba69370aa9a3d0982b7bebdb97}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ad41007ba69370aa9a3d0982b7bebdb97}{W\+R\+I\+T\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+C\+MD}} = 0xa5
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a9a8167173486cb0585899e1464118f9b}\label{class_d_s2482_command_a9a8167173486cb0585899e1464118f9b}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a9a8167173486cb0585899e1464118f9b}{R\+E\+A\+D\+\_\+\+B\+Y\+T\+E\+\_\+\+C\+MD}} = 0x96
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a41ad7adcb0a4cb8df1ce78e61e6f7ab8}\label{class_d_s2482_command_a41ad7adcb0a4cb8df1ce78e61e6f7ab8}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a41ad7adcb0a4cb8df1ce78e61e6f7ab8}{R\+E\+S\+E\+T\+\_\+1\+W\+I\+R\+E\+\_\+\+C\+MD}} = 0xb4
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a6710ed3b2609a1f4f7a7afb25c34d4a3}\label{class_d_s2482_command_a6710ed3b2609a1f4f7a7afb25c34d4a3}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a6710ed3b2609a1f4f7a7afb25c34d4a3}{C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+C\+MD}} = 0xc3
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_af4d04e821e8197fd76b46fd7f46bc4cb}\label{class_d_s2482_command_af4d04e821e8197fd76b46fd7f46bc4cb}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_af4d04e821e8197fd76b46fd7f46bc4cb}{W\+R\+I\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+MD}} = 0xd2
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ae76f74221e3defa47849bc4d6314515e}\label{class_d_s2482_command_ae76f74221e3defa47849bc4d6314515e}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ae76f74221e3defa47849bc4d6314515e}{S\+E\+T\+\_\+\+R\+E\+A\+D\+\_\+\+P\+T\+R\+\_\+\+C\+MD}} = 0xe1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_af83f32cef55ec8e06a7b11af7c2d9250}\label{class_d_s2482_command_af83f32cef55ec8e06a7b11af7c2d9250}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_af83f32cef55ec8e06a7b11af7c2d9250}{D\+E\+V\+I\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+MD}} = 0xf0
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} I2C command code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ab0233c4f4a4b86917ae269a23424666e}\label{class_d_s2482_command_ab0233c4f4a4b86917ae269a23424666e}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ab0233c4f4a4b86917ae269a23424666e}{C\+O\+N\+F\+I\+G\+\_\+\+R\+EG}} = 0xc3
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} register code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aea747fc26b19aa8bb8fa7e507a879f73}\label{class_d_s2482_command_aea747fc26b19aa8bb8fa7e507a879f73}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_aea747fc26b19aa8bb8fa7e507a879f73}{R\+E\+A\+D\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EG}} = 0xe1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} register code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a3f900fad0a5a64ab1ea5f3e1e8fba112}\label{class_d_s2482_command_a3f900fad0a5a64ab1ea5f3e1e8fba112}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a3f900fad0a5a64ab1ea5f3e1e8fba112}{S\+T\+A\+T\+U\+S\+\_\+\+R\+EG}} = 0xf0
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} register code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ac7f8ad7959c12f42ee28411f0d557f4c}\label{class_d_s2482_command_ac7f8ad7959c12f42ee28411f0d557f4c}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ac7f8ad7959c12f42ee28411f0d557f4c}{S\+T\+A\+T\+U\+S\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} = 0b10000000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ab240a7d5eb952940530b43f67e468a64}\label{class_d_s2482_command_ab240a7d5eb952940530b43f67e468a64}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ab240a7d5eb952940530b43f67e468a64}{S\+T\+A\+T\+U\+S\+\_\+\+T\+S\+B\+\_\+\+M\+A\+SK}} = 0b01000000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a7e777aa12edcfeb6cca4b516369993ae}\label{class_d_s2482_command_a7e777aa12edcfeb6cca4b516369993ae}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a7e777aa12edcfeb6cca4b516369993ae}{S\+T\+A\+T\+U\+S\+\_\+\+S\+B\+R\+\_\+\+M\+A\+SK}} = 0b00100000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ab7e3aa0bc77430f00cf803e1d215113d}\label{class_d_s2482_command_ab7e3aa0bc77430f00cf803e1d215113d}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ab7e3aa0bc77430f00cf803e1d215113d}{S\+T\+A\+T\+U\+S\+\_\+\+R\+S\+T\+\_\+\+M\+A\+SK}} = 0b00010000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a1586e3d6778ff31eb1b94065c6ce406f}\label{class_d_s2482_command_a1586e3d6778ff31eb1b94065c6ce406f}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a1586e3d6778ff31eb1b94065c6ce406f}{S\+T\+A\+T\+U\+S\+\_\+\+L\+L\+\_\+\+M\+A\+SK}} = 0b00001000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a933373d6e615e05a6bf3c9b551c86939}\label{class_d_s2482_command_a933373d6e615e05a6bf3c9b551c86939}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a933373d6e615e05a6bf3c9b551c86939}{S\+T\+A\+T\+U\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK}} = 0b00000100
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a193e66bb27a0293eb80de85f45ce1543}\label{class_d_s2482_command_a193e66bb27a0293eb80de85f45ce1543}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a193e66bb27a0293eb80de85f45ce1543}{S\+T\+A\+T\+U\+S\+\_\+\+P\+P\+D\+\_\+\+M\+A\+SK}} = 0b00000010
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a26cd10671e15478699cdeff553b27e8d}\label{class_d_s2482_command_a26cd10671e15478699cdeff553b27e8d}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a26cd10671e15478699cdeff553b27e8d}{S\+T\+A\+T\+U\+S\+\_\+1\+W\+B\+\_\+\+M\+A\+SK}} = 0b00000001
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a4734885803c7db24656cc7d4bee8d00e}\label{class_d_s2482_command_a4734885803c7db24656cc7d4bee8d00e}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a4734885803c7db24656cc7d4bee8d00e}{C\+O\+N\+F\+I\+G\+\_\+1\+W\+S\+\_\+\+M\+A\+SK}} = 0b1000
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aae390ea7aa76eceda59330ebdfe06e33}\label{class_d_s2482_command_aae390ea7aa76eceda59330ebdfe06e33}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_aae390ea7aa76eceda59330ebdfe06e33}{C\+O\+N\+F\+I\+G\+\_\+\+S\+P\+U\+\_\+\+M\+A\+SK}} = 0b0100
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a06b13e68850523d12da47b6b106acc19}\label{class_d_s2482_command_a06b13e68850523d12da47b6b106acc19}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a06b13e68850523d12da47b6b106acc19}{C\+O\+N\+F\+I\+G\+\_\+\+A\+P\+U\+\_\+\+M\+A\+SK}} = 0b0001
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register bit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aab4578032c73a9aa17dacbc0e7ca0d6e}\label{class_d_s2482_command_aab4578032c73a9aa17dacbc0e7ca0d6e}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_aab4578032c73a9aa17dacbc0e7ca0d6e}{S\+E\+A\+R\+C\+H\+\_\+\+R\+OM}} = 0xf0
+\begin{DoxyCompactList}\small\item\em 1-\/wire R\+OM select command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a4ab109c6e299de83ec70028ea7e3d709}\label{class_d_s2482_command_a4ab109c6e299de83ec70028ea7e3d709}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a4ab109c6e299de83ec70028ea7e3d709}{R\+E\+A\+D\+\_\+\+R\+OM}} = 0x33
+\begin{DoxyCompactList}\small\item\em 1-\/wire R\+OM select command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a3eb31038b5e078d1c3a9e4957bcc9851}\label{class_d_s2482_command_a3eb31038b5e078d1c3a9e4957bcc9851}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a3eb31038b5e078d1c3a9e4957bcc9851}{M\+A\+T\+C\+H\+\_\+\+R\+OM}} = 0x55
+\begin{DoxyCompactList}\small\item\em 1-\/wire R\+OM select command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a8e22b0b3119b06052bc7235c1c6d1a4c}\label{class_d_s2482_command_a8e22b0b3119b06052bc7235c1c6d1a4c}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a8e22b0b3119b06052bc7235c1c6d1a4c}{S\+K\+I\+P\+\_\+\+R\+OM}} = 0xcc
+\begin{DoxyCompactList}\small\item\em 1-\/wire R\+OM select command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ab2f234cc47c228763bcc06d24c4cef90}\label{class_d_s2482_command_ab2f234cc47c228763bcc06d24c4cef90}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ab2f234cc47c228763bcc06d24c4cef90}{A\+L\+A\+R\+M\+\_\+\+S\+E\+A\+R\+CH}} = 0xec
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aecc485ac4b99f1b75552aae1a3f98d70}\label{class_d_s2482_command_aecc485ac4b99f1b75552aae1a3f98d70}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_aecc485ac4b99f1b75552aae1a3f98d70}{C\+O\+N\+V\+E\+R\+T\+\_\+T}} = 0x44
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ad4eebcc44b7c144548245a5cc54d4cfe}\label{class_d_s2482_command_ad4eebcc44b7c144548245a5cc54d4cfe}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ad4eebcc44b7c144548245a5cc54d4cfe}{W\+R\+I\+T\+E\+\_\+\+S\+C\+R\+A\+T\+C\+H\+P\+AD}} = 0x4e
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_af89bb64ce4210189165648c3142192ab}\label{class_d_s2482_command_af89bb64ce4210189165648c3142192ab}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_af89bb64ce4210189165648c3142192ab}{R\+E\+A\+D\+\_\+\+S\+C\+R\+A\+T\+C\+H\+P\+AD}} = 0xbe
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a7f07252843b8d21db0977f4b6bfd487d}\label{class_d_s2482_command_a7f07252843b8d21db0977f4b6bfd487d}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a7f07252843b8d21db0977f4b6bfd487d}{C\+O\+P\+Y\+\_\+\+S\+C\+R\+A\+T\+C\+H\+P\+AD}} = 0x48
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a3ac026bc1c7c941e9246e11e4ff19de4}\label{class_d_s2482_command_a3ac026bc1c7c941e9246e11e4ff19de4}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a3ac026bc1c7c941e9246e11e4ff19de4}{R\+E\+C\+A\+L\+L\+\_\+\+E2}} = 0xb8
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a6785f84f3853dcc3422e13152457b712}\label{class_d_s2482_command_a6785f84f3853dcc3422e13152457b712}} 
+static const uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a6785f84f3853dcc3422e13152457b712}{R\+E\+A\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+U\+P\+P\+LY}} = 0xb4
+\begin{DoxyCompactList}\small\item\em D\+S18\+B20 command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a2c2e20453b18655ab5b9b6935462d2e5}\label{class_d_s2482_command_a2c2e20453b18655ab5b9b6935462d2e5}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a2c2e20453b18655ab5b9b6935462d2e5}{C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+9\+B\+IT}} = 0
+\begin{DoxyCompactList}\small\item\em 9-\/bit conversion size, resolution of 1/2 degree C, conversion time 94 ms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ad8ac2b0d8638999ee7832c0d63a0af79}\label{class_d_s2482_command_ad8ac2b0d8638999ee7832c0d63a0af79}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_ad8ac2b0d8638999ee7832c0d63a0af79}{C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+10\+B\+IT}} = 1
+\begin{DoxyCompactList}\small\item\em 10-\/bit conversion size, resolution of 1/4 degree C, conversion time 188 ms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a2eb8ba73273b26ee22700c8d48c1ab20}\label{class_d_s2482_command_a2eb8ba73273b26ee22700c8d48c1ab20}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a2eb8ba73273b26ee22700c8d48c1ab20}{C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+11\+B\+IT}} = 2
+\begin{DoxyCompactList}\small\item\em 11-\/bit conversion size, resolution of 1/8 degree C, conversion time 375 ms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aa91ea7b3ce6822e580d0eb670f7be6e2}\label{class_d_s2482_command_aa91ea7b3ce6822e580d0eb670f7be6e2}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_aa91ea7b3ce6822e580d0eb670f7be6e2}{C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT}} = 3
+\begin{DoxyCompactList}\small\item\em 12-\/bit conversion size, resolution of 1/16 degree C, conversion time 750 ms (default) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a0324b281b9bf9370c3f9763e325d4797}\label{class_d_s2482_command_a0324b281b9bf9370c3f9763e325d4797}} 
+static const int \mbox{\hyperlink{class_d_s2482_command_a0324b281b9bf9370c3f9763e325d4797}{R\+E\+T\+R\+I\+E\+S\+\_\+\+D\+E\+F\+A\+U\+LT}} = 3
+\begin{DoxyCompactList}\small\item\em Default numnber of retries if you don\textquotesingle{}t override it with with\+Retries() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_command_a95a7c2c3e6e2ae2257cd64702d3458b7}\label{class_d_s2482_command_a95a7c2c3e6e2ae2257cd64702d3458b7}} 
+void \mbox{\hyperlink{class_d_s2482_command_a95a7c2c3e6e2ae2257cd64702d3458b7}{push\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Add this command to the parent queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a8841b3f17a884d3776d969fe2cbe01dd}\label{class_d_s2482_command_a8841b3f17a884d3776d969fe2cbe01dd}} 
+void \mbox{\hyperlink{class_d_s2482_command_a8841b3f17a884d3776d969fe2cbe01dd}{push\+Command\+List}} ()
+\begin{DoxyCompactList}\small\item\em Pushes a command list onto the command list stack. This is done when a command needs their own sequence of commands to run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a3947439010c45355cfb457154764ae37}\label{class_d_s2482_command_a3947439010c45355cfb457154764ae37}} 
+void \mbox{\hyperlink{class_d_s2482_command_a3947439010c45355cfb457154764ae37}{pop\+Command\+List}} ()
+\begin{DoxyCompactList}\small\item\em Pops a command list off the command list stack. This is done when a command needs their own sequence of commands to run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ad8fc03f37fadcc79d73e0697b9dcfdbf}\label{class_d_s2482_command_ad8fc03f37fadcc79d73e0697b9dcfdbf}} 
+int \mbox{\hyperlink{class_d_s2482_command_ad8fc03f37fadcc79d73e0697b9dcfdbf}{read\+Status}} (uint8\+\_\+t \&value, bool set\+Read\+Pointer\+First=true)
+\begin{DoxyCompactList}\small\item\em Reads the status \mbox{\hyperlink{class_d_s2482}{D\+S2482}} status register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a4cefdb82733790a811dced1de08d6651}\label{class_d_s2482_command_a4cefdb82733790a811dced1de08d6651}} 
+int \mbox{\hyperlink{class_d_s2482_command_a4cefdb82733790a811dced1de08d6651}{read\+Data}} (uint8\+\_\+t \&value, bool set\+Read\+Pointer\+First=true)
+\begin{DoxyCompactList}\small\item\em Reads the status \mbox{\hyperlink{class_d_s2482}{D\+S2482}} data register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a5923ef4a995083ecd35a0f3428aad2c9}\label{class_d_s2482_command_a5923ef4a995083ecd35a0f3428aad2c9}} 
+int \mbox{\hyperlink{class_d_s2482_command_a5923ef4a995083ecd35a0f3428aad2c9}{set\+Read\+Pointer}} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Sets the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} read pointer to a specific register (C\+O\+N\+F\+I\+G\+\_\+\+R\+EG, R\+E\+A\+D\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EG, R\+E\+A\+D\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EG) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a821fd22a641c45c97f97f5c8884de0bb}\label{class_d_s2482_command_a821fd22a641c45c97f97f5c8884de0bb}} 
+int \mbox{\hyperlink{class_d_s2482_command_a821fd22a641c45c97f97f5c8884de0bb}{read\+Config}} (uint8\+\_\+t \&value)
+\begin{DoxyCompactList}\small\item\em Reads the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register. Always sets the data pointer first. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a22dbc965ff38e12e2535c882c36ef32c}\label{class_d_s2482_command_a22dbc965ff38e12e2535c882c36ef32c}} 
+int \mbox{\hyperlink{class_d_s2482_command_a22dbc965ff38e12e2535c882c36ef32c}{write\+Config}} (bool speed, bool spu, bool apu)
+\begin{DoxyCompactList}\small\item\em Writes the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_acc17deae69011d477cbc1256a33cbe0a}\label{class_d_s2482_command_acc17deae69011d477cbc1256a33cbe0a}} 
+int \mbox{\hyperlink{class_d_s2482_command_acc17deae69011d477cbc1256a33cbe0a}{write\+Reg0}} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Writes a \mbox{\hyperlink{class_d_s2482}{D\+S2482}} register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a9d3be13ad42ea9757a4419a9ca37a50a}\label{class_d_s2482_command_a9d3be13ad42ea9757a4419a9ca37a50a}} 
+int \mbox{\hyperlink{class_d_s2482_command_a9d3be13ad42ea9757a4419a9ca37a50a}{write\+Reg1}} (uint8\+\_\+t reg, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Writes the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} config register and a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a1c3a266a0513550cfa708a3e32af90be}\label{class_d_s2482_command_a1c3a266a0513550cfa708a3e32af90be}} 
+int \mbox{\hyperlink{class_d_s2482_command_a1c3a266a0513550cfa708a3e32af90be}{strong\+Pull\+Up}} (bool on)
+\begin{DoxyCompactList}\small\item\em Enables or disables strong pull-\/up mode. Used by parasitic power mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a2efe9cb03d44be8cc1223f34417b0656}\label{class_d_s2482_command_a2efe9cb03d44be8cc1223f34417b0656}} 
+void \mbox{\hyperlink{class_d_s2482_command_a2efe9cb03d44be8cc1223f34417b0656}{begin\+Transmission}} ()
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ac0f1d16ab0365ba40fd928f3f94915c8}\label{class_d_s2482_command_ac0f1d16ab0365ba40fd928f3f94915c8}} 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ac0f1d16ab0365ba40fd928f3f94915c8}{end\+Transmission}} (bool stop=true)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a968712d6c1e7386f8e4c07fae845d407}\label{class_d_s2482_command_a968712d6c1e7386f8e4c07fae845d407}} 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a968712d6c1e7386f8e4c07fae845d407}{request\+From}} (uint8\+\_\+t num\+Bytes, bool stop=true)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_ae8f1c3c34aaead3bd32f2b7a554d9d9e}\label{class_d_s2482_command_ae8f1c3c34aaead3bd32f2b7a554d9d9e}} 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_command_ae8f1c3c34aaead3bd32f2b7a554d9d9e}{write}} (uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_a2945b8e699ca9966466e7b63202b33f8}\label{class_d_s2482_command_a2945b8e699ca9966466e7b63202b33f8}} 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_command_a2945b8e699ca9966466e7b63202b33f8}{write}} (const uint8\+\_\+t $\ast$buf, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aeb42b6aa9d1fc73ab53aa039bcaeb949}\label{class_d_s2482_command_aeb42b6aa9d1fc73ab53aa039bcaeb949}} 
+int \mbox{\hyperlink{class_d_s2482_command_aeb42b6aa9d1fc73ab53aa039bcaeb949}{available}} (void)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_aacf56d7b84baad5e63053fc255e76397}\label{class_d_s2482_command_aacf56d7b84baad5e63053fc255e76397}} 
+int \mbox{\hyperlink{class_d_s2482_command_aacf56d7b84baad5e63053fc255e76397}{read}} (void)
+\begin{DoxyCompactList}\small\item\em Reflects to \mbox{\hyperlink{class_d_s2482}{D\+S2482}} parent to do an I2C operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}\label{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}} 
+\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \& \mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} that this command is being run on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Useful static constants, but the class is mostly just a base class for other commands. 
+
+You won\textquotesingle{}t need to instantiate this but will often use constants like R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE in it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_s2482_command_afafdd341bb8dbddf755a1ba2aaee79db}\label{class_d_s2482_command_afafdd341bb8dbddf755a1ba2aaee79db}} 
+\index{D\+S2482\+Command@{D\+S2482\+Command}!D\+S2482\+Command@{D\+S2482\+Command}}
+\index{D\+S2482\+Command@{D\+S2482\+Command}!D\+S2482\+Command@{D\+S2482\+Command}}
+\subsubsection{\texorpdfstring{D\+S2482\+Command()}{DS2482Command()}}
+{\footnotesize\ttfamily D\+S2482\+Command\+::\+D\+S2482\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent }\end{DoxyParamCaption})}
+
+
+
+Construct a command object. 
+
+You won\textquotesingle{}t need to do this, as this class is only used as superclass of other command classes 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

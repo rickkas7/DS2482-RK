@@ -1,0 +1,56 @@
+\hypertarget{class_d_s24821_wire_triplet}{}\section{D\+S24821\+Wire\+Triplet Class Reference}
+\label{class_d_s24821_wire_triplet}\index{D\+S24821\+Wire\+Triplet@{D\+S24821\+Wire\+Triplet}}
+
+
+Low-\/level class to generate a 1-\/wire triplet, used for bus search. You won\textquotesingle{}t need to call this directly.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S24821\+Wire\+Triplet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s24821_wire_triplet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_add828cd5c41a8052bd1f004167f45856}\label{class_d_s24821_wire_triplet_add828cd5c41a8052bd1f004167f45856}} 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_triplet_add828cd5c41a8052bd1f004167f45856}{get\+Status\+Bits}} () const
+\begin{DoxyCompactList}\small\item\em Gets the status bit result from 1-\/wire triplet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_a904b22b4d426bc6eab5e29812f62d326}\label{class_d_s24821_wire_triplet_a904b22b4d426bc6eab5e29812f62d326}} 
+bool \mbox{\hyperlink{class_d_s24821_wire_triplet_a904b22b4d426bc6eab5e29812f62d326}{get\+S\+BR}} () const
+\begin{DoxyCompactList}\small\item\em Returns the state of the S\+BR in the status register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_a564c45067d9502575ebcad4d7f0fe59b}\label{class_d_s24821_wire_triplet_a564c45067d9502575ebcad4d7f0fe59b}} 
+bool \mbox{\hyperlink{class_d_s24821_wire_triplet_a564c45067d9502575ebcad4d7f0fe59b}{get\+T\+SB}} () const
+\begin{DoxyCompactList}\small\item\em Returns the state of the T\+SB in the status register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_afa065b80fd93597f05b2008b791e0325}\label{class_d_s24821_wire_triplet_afa065b80fd93597f05b2008b791e0325}} 
+bool \mbox{\hyperlink{class_d_s24821_wire_triplet_afa065b80fd93597f05b2008b791e0325}{get\+D\+IR}} () const
+\begin{DoxyCompactList}\small\item\em Returns the state of the D\+IR in the status register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_ab6f4e38254420ee2aca30bbc7cb44213}\label{class_d_s24821_wire_triplet_ab6f4e38254420ee2aca30bbc7cb44213}} 
+static \mbox{\hyperlink{class_d_s24821_wire_triplet}{D\+S24821\+Wire\+Triplet}} \& \mbox{\hyperlink{class_d_s24821_wire_triplet_ab6f4e38254420ee2aca30bbc7cb44213}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, bool dir\+In, std\+::function$<$ void(\mbox{\hyperlink{class_d_s24821_wire_triplet}{D\+S24821\+Wire\+Triplet}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Runs a 1-\/wire triplet operation -\/ used internally to do bus search. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_triplet_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s24821_wire_triplet_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Low-\/level class to generate a 1-\/wire triplet, used for bus search. You won\textquotesingle{}t need to call this directly. 
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

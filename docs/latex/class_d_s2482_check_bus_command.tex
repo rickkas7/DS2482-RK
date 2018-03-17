@@ -1,0 +1,101 @@
+\hypertarget{class_d_s2482_check_bus_command}{}\section{D\+S2482\+Check\+Bus\+Command Class Reference}
+\label{class_d_s2482_check_bus_command}\index{D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}}
+
+
+Checks the 1-\/wire bus to determine if it\textquotesingle{}s single drop or multi-\/drop.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Check\+Bus\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_check_bus_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_d_s2482_check_bus_command_a2d374709f24c8d7ad0c48766d7f072ee}{get\+Bus\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Gets the bus status\+: N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, or M\+U\+L\+T\+I\+\_\+\+D\+R\+OP. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \& \mbox{\hyperlink{class_d_s2482_check_bus_command_ac768c4e5d7bae840e451323cabc3c2de}{get\+Address}} () const
+\begin{DoxyCompactList}\small\item\em If S\+I\+N\+G\+L\+E\+\_\+\+D\+R\+OP, gets the address of the single device on the bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_check_bus_command}{D\+S2482\+Check\+Bus\+Command}} \& \mbox{\hyperlink{class_d_s2482_check_bus_command_a6710655a1ac2abc35d08db156d215c75}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_check_bus_command}{D\+S2482\+Check\+Bus\+Command}} \&, int status, int bus\+Status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Check the 1-\/wire bus to see if there are 0, 1, or more devices on it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_check_bus_command_a926bd84843d75b022d88c896fd4608c1}\label{class_d_s2482_check_bus_command_a926bd84843d75b022d88c896fd4608c1}} 
+static const int \mbox{\hyperlink{class_d_s2482_check_bus_command_a926bd84843d75b022d88c896fd4608c1}{N\+O\+\_\+\+D\+E\+V\+I\+C\+ES}} = 0
+\begin{DoxyCompactList}\small\item\em There are 0 devices on the 1-\/wire bus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_check_bus_command_acf9addb2b671bfc9567dd58228379ec5}\label{class_d_s2482_check_bus_command_acf9addb2b671bfc9567dd58228379ec5}} 
+static const int \mbox{\hyperlink{class_d_s2482_check_bus_command_acf9addb2b671bfc9567dd58228379ec5}{S\+I\+N\+G\+L\+E\+\_\+\+D\+R\+OP}} = 1
+\begin{DoxyCompactList}\small\item\em There is 1 device on the 1-\/wire bus. An empty address can be used to identify the single device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_check_bus_command_af268c37a135b78ae684adfebeee349c1}\label{class_d_s2482_check_bus_command_af268c37a135b78ae684adfebeee349c1}} 
+static const int \mbox{\hyperlink{class_d_s2482_check_bus_command_af268c37a135b78ae684adfebeee349c1}{M\+U\+L\+T\+I\+\_\+\+D\+R\+OP}} = 2
+\begin{DoxyCompactList}\small\item\em There are 2 or more devices on the 1-\/wire bus. Addressing is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_check_bus_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_check_bus_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Checks the 1-\/wire bus to determine if it\textquotesingle{}s single drop or multi-\/drop. 
+
+Completion is called with N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, S\+I\+N\+G\+L\+E\+\_\+\+D\+R\+OP, or M\+U\+L\+T\+I\+\_\+\+D\+R\+OP indicating 0, 1, or more sensors on the 1-\/wire bus.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_check_bus_command_ac768c4e5d7bae840e451323cabc3c2de}\label{class_d_s2482_check_bus_command_ac768c4e5d7bae840e451323cabc3c2de}} 
+\index{D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}!get\+Address@{get\+Address}}
+\index{get\+Address@{get\+Address}!D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}}
+\subsubsection{\texorpdfstring{get\+Address()}{getAddress()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}}\& D\+S2482\+Check\+Bus\+Command\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+If S\+I\+N\+G\+L\+E\+\_\+\+D\+R\+OP, gets the address of the single device on the bus. 
+
+Note that for D\+S2482\+Get\+Temperature you don\textquotesingle{}t need the address for single drop; you can just pass an empty \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} and it will automatally use the only device on the bus. \mbox{\Hypertarget{class_d_s2482_check_bus_command_a2d374709f24c8d7ad0c48766d7f072ee}\label{class_d_s2482_check_bus_command_a2d374709f24c8d7ad0c48766d7f072ee}} 
+\index{D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}!get\+Bus\+Status@{get\+Bus\+Status}}
+\index{get\+Bus\+Status@{get\+Bus\+Status}!D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}}
+\subsubsection{\texorpdfstring{get\+Bus\+Status()}{getBusStatus()}}
+{\footnotesize\ttfamily int D\+S2482\+Check\+Bus\+Command\+::get\+Bus\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the bus status\+: N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, or M\+U\+L\+T\+I\+\_\+\+D\+R\+OP. 
+
+You normally don\textquotesingle{}t need this because it\textquotesingle{}s passed as a parameter to the completion lambda. \mbox{\Hypertarget{class_d_s2482_check_bus_command_a6710655a1ac2abc35d08db156d215c75}\label{class_d_s2482_check_bus_command_a6710655a1ac2abc35d08db156d215c75}} 
+\index{D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Check\+Bus\+Command@{D\+S2482\+Check\+Bus\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_check_bus_command}{D\+S2482\+Check\+Bus\+Command}} \& D\+S2482\+Check\+Bus\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_check_bus_command}{D\+S2482\+Check\+Bus\+Command}} \&, int status, int bus\+Status)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check the 1-\/wire bus to see if there are 0, 1, or more devices on it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to. If it\textquotesingle{}s a D\+S2482\+\_\+800, make sure you set the channel as well.\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded. If it\textquotesingle{}s any other value an error occurred. The bus\+Status is one of N\+O\+\_\+\+D\+E\+V\+I\+C\+ES, S\+I\+N\+G\+L\+E\+\_\+\+D\+R\+OP, or M\+U\+L\+T\+I\+\_\+\+D\+R\+OP indicating 0, 1, or more sensors on the 1-\/wire bus.\\
+\hline
+\end{DoxyParams}
+This call executes asynchronously. The completion function is called when complete or an error occurs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

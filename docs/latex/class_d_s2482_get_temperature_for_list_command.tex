@@ -1,0 +1,106 @@
+\hypertarget{class_d_s2482_get_temperature_for_list_command}{}\section{D\+S2482\+Get\+Temperature\+For\+List\+Command Class Reference}
+\label{class_d_s2482_get_temperature_for_list_command}\index{D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}}
+
+
+Gets the temperatures for multiple D\+S18\+B20 sensors on a single bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Get\+Temperature\+For\+List\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_get_temperature_for_list_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_abf3514034c3423dac4a17a02ea9928b8}\label{class_d_s2482_get_temperature_for_list_command_abf3514034c3423dac4a17a02ea9928b8}} 
+\mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command_abf3514034c3423dac4a17a02ea9928b8}{with\+Max\+Retries}} (size\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Sets the number of times to retry reading the temperature. Default is 3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command_a2e9bb74693d3644df1d503a168f7da72}{with\+Conversion\+Size}} (int value)
+\begin{DoxyCompactList}\small\item\em Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_af1a1456ab9c30f667fcdeeff6091dd33}\label{class_d_s2482_get_temperature_for_list_command_af1a1456ab9c30f667fcdeeff6091dd33}} 
+\mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command_af1a1456ab9c30f667fcdeeff6091dd33}{with\+Parasitic\+Power}} (bool value=true)
+\begin{DoxyCompactList}\small\item\em Sets whether to use parasitic power or not. The default is false. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command_a962f91c29fa4a2a1d5c02ab2f4c120a9}{get\+Num\+Retries}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of retries across all sensor reads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command_ad0895d68b4409b157891b751e740b4fe}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&device\+List, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \&, int status, \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&device\+List)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Gets the temperatures for a number of D\+S18\+B20 sensors on the 1-\/wire bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_get_temperature_for_list_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Gets the temperatures for multiple D\+S18\+B20 sensors on a single bus. 
+
+This is faster than calling \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} for each sensor separately. The reason is that the longest operation, ConvertT, takes 750 milliseconds (for 12-\/bit readings). When you use \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} ConvertT for all of the sensors on the bus is done at the same time, so you only incur the 750 millisecond time once, regardless of how many sensors are on the bus. The individual readings need to be made for each D\+S18\+B20, but that\textquotesingle{}s fast.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_a962f91c29fa4a2a1d5c02ab2f4c120a9}\label{class_d_s2482_get_temperature_for_list_command_a962f91c29fa4a2a1d5c02ab2f4c120a9}} 
+\index{D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}!get\+Num\+Retries@{get\+Num\+Retries}}
+\index{get\+Num\+Retries@{get\+Num\+Retries}!D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}}
+\subsubsection{\texorpdfstring{get\+Num\+Retries()}{getNumRetries()}}
+{\footnotesize\ttfamily size\+\_\+t D\+S2482\+Get\+Temperature\+For\+List\+Command\+::get\+Num\+Retries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total number of retries across all sensor reads. 
+
+This should be 0 most of the time when all sensors were read successfully the first time. \mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_ad0895d68b4409b157891b751e740b4fe}\label{class_d_s2482_get_temperature_for_list_command_ad0895d68b4409b157891b751e740b4fe}} 
+\index{D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \& D\+S2482\+Get\+Temperature\+For\+List\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{\mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&}]{device\+List,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} \&, int status, \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&device\+List)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the temperatures for a number of D\+S18\+B20 sensors on the 1-\/wire bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to. If it\textquotesingle{}s a D\+S2482\+\_\+800, make sure you set the channel as well.\\
+\hline
+{\em device\+List} & the \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} for the devices you want to get the temperatures for\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded.\\
+\hline
+\end{DoxyParams}
+This is faster than calling \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} for each sensor separately. The reason is that the longest operation, ConvertT, takes 750 milliseconds (for 12-\/bit readings). When you use \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} ConvertT for all of the sensors on the bus is done at the same time, so you only incur the 750 millisecond time once, regardless of how many sensors are on the bus. The individual readings need to be made for each D\+S18\+B20, but that\textquotesingle{}s fast.
+
+Note that every D\+S18\+B20 on the 1-\/wire bus is commanded to convert their temperature, not just the ones in the device\+List. Only the temperatures for the sensors in the device\+List are retrieved, however.
+
+This call executes asynchronously. The completion function is called when complete or an error occurs. \mbox{\Hypertarget{class_d_s2482_get_temperature_for_list_command_a2e9bb74693d3644df1d503a168f7da72}\label{class_d_s2482_get_temperature_for_list_command_a2e9bb74693d3644df1d503a168f7da72}} 
+\index{D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}!with\+Conversion\+Size@{with\+Conversion\+Size}}
+\index{with\+Conversion\+Size@{with\+Conversion\+Size}!D\+S2482\+Get\+Temperature\+For\+List\+Command@{D\+S2482\+Get\+Temperature\+For\+List\+Command}}
+\subsubsection{\texorpdfstring{with\+Conversion\+Size()}{withConversionSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}}\& D\+S2482\+Get\+Temperature\+For\+List\+Command\+::with\+Conversion\+Size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The number of bits the D\+S18\+B20s are configured for. The constants are defined in the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} class and are one of\+: C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+9\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+10\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+11\+B\+IT, or C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. At 9 bits, the resolution is 1/2 degrees C. At 12 bits, the resolution is 1/16 degrees C. The factory default hardware setting is 12 bits. Note that you must have use D\+S2482\+Set\+Config to set the conversion size first; just reducing the value in this call without changing the D\+S18\+B20 configuration will result in invalid readings.\\
+\hline
+\end{DoxyParams}
+In the unusual situation that you have sensors of different bit settings, select the largest bit setting. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

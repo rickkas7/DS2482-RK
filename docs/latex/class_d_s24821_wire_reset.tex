@@ -1,0 +1,49 @@
+\hypertarget{class_d_s24821_wire_reset}{}\section{D\+S24821\+Wire\+Reset Class Reference}
+\label{class_d_s24821_wire_reset}\index{D\+S24821\+Wire\+Reset@{D\+S24821\+Wire\+Reset}}
+
+
+Resets the 1-\/wire bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S24821\+Wire\+Reset\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s24821_wire_reset}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_reset_a79cb9f726fce17b4ff23a4df739ede3b}\label{class_d_s24821_wire_reset_a79cb9f726fce17b4ff23a4df739ede3b}} 
+bool \mbox{\hyperlink{class_d_s24821_wire_reset_a79cb9f726fce17b4ff23a4df739ede3b}{get\+Presence\+Detected}} () const
+\begin{DoxyCompactList}\small\item\em Get whether a presence pulse was detected after 1-\/wire reset. Also passed to the completion function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_reset_a39a32211363709147a294fb61a323034}\label{class_d_s24821_wire_reset_a39a32211363709147a294fb61a323034}} 
+static \mbox{\hyperlink{class_d_s24821_wire_reset}{D\+S24821\+Wire\+Reset}} \& \mbox{\hyperlink{class_d_s24821_wire_reset_a39a32211363709147a294fb61a323034}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, std\+::function$<$ void(\mbox{\hyperlink{class_d_s24821_wire_reset}{D\+S24821\+Wire\+Reset}} \&, int status, bool presence\+Detected)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Low-\/level call to reset the 1-\/wire bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_reset_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s24821_wire_reset_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Resets the 1-\/wire bus. 
+
+You normally don\textquotesingle{}t need to do this yourself, as it\textquotesingle{}s done internally when necessary, such as before a bus search.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{class_d_s2482}{}\section{D\+S2482 Class Reference}
+\label{class_d_s2482}\index{D\+S2482@{D\+S2482}}
+
+
+Class for \mbox{\hyperlink{class_d_s2482}{D\+S2482}} devices.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s2482_ab048669551660da42318e10fa8457444}{D\+S2482}} (Two\+Wire \&wire, int addr)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_d_s2482}{D\+S2482}} objects. Instantiate one for each D\+S2482-\/100 or D\+S2482-\/800 you have. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_ad99cc97303e8709fd5277f49289f6e6f}\label{class_d_s2482_ad99cc97303e8709fd5277f49289f6e6f}} 
+void \mbox{\hyperlink{class_d_s2482_ad99cc97303e8709fd5277f49289f6e6f}{setup}} ()
+\begin{DoxyCompactList}\small\item\em setup call, call during \mbox{\hyperlink{class_d_s2482_ad99cc97303e8709fd5277f49289f6e6f}{setup()}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}\label{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}} 
+void \mbox{\hyperlink{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}{loop}} ()
+\begin{DoxyCompactList}\small\item\em loop call, call on every time through \mbox{\hyperlink{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}{loop()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_d_s2482_af67372aa2f9fa896f46ca4766104cea0}{check\+C\+RC}} (const uint8\+\_\+t $\ast$buf, size\+\_\+t buf\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_aa76b9fe057be9ac1f4214f3b26c55c37}\label{class_d_s2482_aa76b9fe057be9ac1f4214f3b26c55c37}} 
+class {\bfseries D\+S2482\+Command}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for \mbox{\hyperlink{class_d_s2482}{D\+S2482}} devices. 
+
+You need one instance of this class for each D\+S2482-\/100 or D\+S2482-\/800 you have on your I2C bus.
+
+You typically only ever need to call the \mbox{\hyperlink{class_d_s2482_ad99cc97303e8709fd5277f49289f6e6f}{setup()}} and \mbox{\hyperlink{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}{loop()}} methods. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_s2482_ab048669551660da42318e10fa8457444}\label{class_d_s2482_ab048669551660da42318e10fa8457444}} 
+\index{D\+S2482@{D\+S2482}!D\+S2482@{D\+S2482}}
+\index{D\+S2482@{D\+S2482}!D\+S2482@{D\+S2482}}
+\subsubsection{\texorpdfstring{D\+S2482()}{DS2482()}}
+{\footnotesize\ttfamily D\+S2482\+::\+D\+S2482 (\begin{DoxyParamCaption}\item[{Two\+Wire \&}]{wire,  }\item[{int}]{addr }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_d_s2482}{D\+S2482}} objects. Instantiate one for each D\+S2482-\/100 or D\+S2482-\/800 you have. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wire} & The I2C interface to use, typically Wire, though it could be Wire1.\\
+\hline
+{\em addr} & The address. This is typically 0 $<$= addr $<$ 8 for a D\+S2482-\/800 or 0 $<$= addr $<$ 4 for a D\+S2482-\/100. If you specify a value $>$= 8 it\textquotesingle{}s assumed to be an actual I2C addres 8 $<$= addr $<$ 128. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_af67372aa2f9fa896f46ca4766104cea0}\label{class_d_s2482_af67372aa2f9fa896f46ca4766104cea0}} 
+\index{D\+S2482@{D\+S2482}!check\+C\+RC@{check\+C\+RC}}
+\index{check\+C\+RC@{check\+C\+RC}!D\+S2482@{D\+S2482}}
+\subsubsection{\texorpdfstring{check\+C\+R\+C()}{checkCRC()}}
+{\footnotesize\ttfamily bool D\+S2482\+::check\+C\+RC (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buf,  }\item[{size\+\_\+t}]{buf\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks the C\+RC of a scratchpad buffer or an I2C address
+
+\begin{DoxyReturn}{Returns}
+True if valid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

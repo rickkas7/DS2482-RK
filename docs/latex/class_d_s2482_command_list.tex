@@ -1,0 +1,47 @@
+\hypertarget{class_d_s2482_command_list}{}\section{D\+S2482\+Command\+List Class Reference}
+\label{class_d_s2482_command_list}\index{D\+S2482\+Command\+List@{D\+S2482\+Command\+List}}
+
+
+Used internally to hold a list of command objects to run.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_command_list_a222351de047a4a66693255ff5fc8979b}\label{class_d_s2482_command_list_a222351de047a4a66693255ff5fc8979b}} 
+virtual int \mbox{\hyperlink{class_d_s2482_command_list_a222351de047a4a66693255ff5fc8979b}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Called from \mbox{\hyperlink{class_d_s2482_a28f5f71ae64c58e71dd8cba3c14a2960}{D\+S2482\+::loop()}} when this command list is the currently executing command list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_list_a2b03f6ccc33c3fe52fe7c78dbf6d0d2d}\label{class_d_s2482_command_list_a2b03f6ccc33c3fe52fe7c78dbf6d0d2d}} 
+void \mbox{\hyperlink{class_d_s2482_command_list_a2b03f6ccc33c3fe52fe7c78dbf6d0d2d}{remove\+Front}} ()
+\begin{DoxyCompactList}\small\item\em Removes the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} at the front of the queue and deletes it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_command_list_a157da8922c47289cc66a372534eb44a5}\label{class_d_s2482_command_list_a157da8922c47289cc66a372534eb44a5}} 
+void \mbox{\hyperlink{class_d_s2482_command_list_a157da8922c47289cc66a372534eb44a5}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all of the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} objects from the queue and deletes them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s2482_command_list_a3586ea3275823c3e5f1463034ac1f7d5}{push}} (\mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} subclass to the end of this queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used internally to hold a list of command objects to run. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_command_list_a3586ea3275823c3e5f1463034ac1f7d5}\label{class_d_s2482_command_list_a3586ea3275823c3e5f1463034ac1f7d5}} 
+\index{D\+S2482\+Command\+List@{D\+S2482\+Command\+List}!push@{push}}
+\index{push@{push}!D\+S2482\+Command\+List@{D\+S2482\+Command\+List}}
+\subsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void D\+S2482\+Command\+List\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Adds a \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} subclass to the end of this queue. 
+
+Ownership of the object transfers and it will deleted when it\textquotesingle{}s no longer used. Thus you cannot pass a stack-\/allocated object to this method. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

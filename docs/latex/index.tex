@@ -1,0 +1,547 @@
+The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} is an I2C to 1-\/wire interface chip. It comes in two versions, the D\+S2482-\/100 (1-\/port) and D\+S2482-\/800 (8-\/port). Using an interface chip is helpful because most D\+S18\+B20/1-\/wire libraries use timing sensitive code and may run for extended periods with interrupts disabled. This can cause the rest of your program to have poor performance.
+
+The library fully supports both single-\/drop and multi-\/drop modes, allowing many D\+S18\+B20 sensors on a single 1-\/wire bus.
+
+The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} library is completely asynchronous, never blocking for more than the time to do an I2C read or write. Interrupts are never disabled.
+
+Every call uses a C++11 lambda completion handler. The second part of this document has a bit of explanation of why and how it works.
+
+The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} also has an internal transistor to pull the 1-\/wire bus high during temperature conversion and flash writes. This allows the use of parasitic power mode, requiring only two wires for sensors (DQ and G\+ND), with no separate power line. The library supports this as well.
+
+\subsection*{Common tasks}
+
+\subsubsection*{Get temperature of one sensor (single-\/drop)}
+
+
+\begin{DoxyCode}
+#include "DS2482.h"
+
+SerialLogHandler logHandler;
+
+DS2482 ds(Wire, 3);
+
+const unsigned long CHECK\_PERIOD = 30000;
+unsigned long lastCheck = 5000 - CHECK\_PERIOD;
+
+void setup() \{
+    Serial.begin(9600);
+    ds.setup();
+
+    DS2482DeviceReset::run(ds, [](DS2482DeviceReset&, int status) \{
+        Serial.printlnf("deviceReset=%d", status);
+    \});
+
+    Serial.println("setup complete");
+\}
+
+
+
+void loop() \{
+
+    ds.loop();
+
+    if (millis() - lastCheck >= CHECK\_PERIOD) \{
+        lastCheck = millis();
+
+        // For single-drop you can pass an empty address to get the temperature of the only
+        // sensor on the 1-wire bus
+        DS24821WireAddress addr;
+
+        DS2482GetTemperatureCommand::run(ds, addr, [](DS2482GetTemperatureCommand&, int status, float
+       tempC) \{
+            if (status == DS2482Command::RESULT\_DONE) \{
+                char buf[32];
+                snprintf(buf, sizeof(buf), "%.4f", tempC);
+
+                Serial.printlnf("temperature=%s deg C", buf);
+                Particle.publish("temperature", buf, PRIVATE);
+            \}
+            else \{
+                Serial.printlnf("DS2482GetTemperatureCommand failed status=%d", status);
+            \}
+        \});
+    \}
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Get temperatures of multiple sensors (multi-\/drop)}
+
+
+\begin{DoxyCode}
+#include "DS2482.h"
+
+SerialLogHandler logHandler;
+
+DS2482 ds(Wire, 3);
+
+DS2482DeviceListStatic<10> deviceList;
+const unsigned long CHECK\_PERIOD = 30000;
+unsigned long lastCheck = 10000 - CHECK\_PERIOD;
+
+void setup() \{
+    Serial.begin(9600);
+    ds.setup();
+
+    DS2482DeviceReset::run(ds, [](DS2482DeviceReset&, int status) \{
+        Serial.printlnf("deviceReset=%d", status);
+        DS2482SearchBusCommand::run(ds, deviceList, [](DS2482SearchBusCommand &obj, int status) \{
+
+            if (status != DS2482Command::RESULT\_DONE) \{
+                Serial.printlnf("DS2482SearchBusCommand status=%d", status);
+                return;
+            \}
+
+            Serial.printlnf("Found %u devices", deviceList.getDeviceCount());
+        \});
+    \});
+
+    Serial.println("setup complete");
+\}
+
+
+void loop() \{
+
+    ds.loop();
+
+    if (millis() - lastCheck >= CHECK\_PERIOD) \{
+        lastCheck = millis();
+
+        if (deviceList.getDeviceCount() > 0) \{
+
+            DS2482GetTemperatureForListCommand::run(ds, deviceList, [](DS2482GetTemperatureForListCommand&,
+       int status, DS2482DeviceList &deviceList) \{
+                if (status != DS2482Command::RESULT\_DONE) \{
+                    Serial.printlnf("DS2482GetTemperatureForListCommand status=%d", status);
+                    return;
+                \}
+
+                Serial.printlnf("got temperatures!");
+
+                for(size\_t ii = 0; ii < deviceList.getDeviceCount(); ii++) \{
+                    Serial.printlnf("%s valid=%d C=%f F=%f",
+                            deviceList.getAddressByIndex(ii).toString().c\_str(),
+                            deviceList.getDeviceByIndex(ii).getValid(),
+                            deviceList.getDeviceByIndex(ii).getTemperatureC(),
+                            deviceList.getDeviceByIndex(ii).getTemperatureF());
+                \}
+
+            \});
+        \}
+        else \{
+            Serial.printlnf("no devices found");
+        \}
+    \}
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Multi-\/drop with parasitic power}
+
+Just as the previous example, except within loop the call to D2482\+Get\+Temperature\+List\+Command\+::run has an extra optional fluent parameter, {\ttfamily .with\+Parasitic\+Power()}.
+
+
+\begin{DoxyCode}
+DS2482GetTemperatureForListCommand::run(ds, deviceList, [](DS2482GetTemperatureForListCommand&, int status,
+       DS2482DeviceList &deviceList) \{
+    if (status != DS2482Command::RESULT\_DONE) \{
+        Serial.printlnf("DS2482GetTemperatureForListCommand status=%d", status);
+        return;
+    \}
+
+    Serial.printlnf("got temperatures!");
+
+    for(size\_t ii = 0; ii < deviceList.getDeviceCount(); ii++) \{
+        Serial.printlnf("%s valid=%d C=%f F=%f",
+                deviceList.getAddressByIndex(ii).toString().c\_str(),
+                deviceList.getDeviceByIndex(ii).getValid(),
+                deviceList.getDeviceByIndex(ii).getTemperatureC(),
+                deviceList.getDeviceByIndex(ii).getTemperatureF());
+    \}
+
+\}).withParasiticPower();
+\end{DoxyCode}
+
+
+\subsubsection*{Multi-\/drop with J\+S\+ON publish}
+
+This example is like the previous, except it publishes multiple sensor values via a single Particle.\+publish in J\+S\+ON format (up to 10 D\+S18\+B20s supported).
+
+
+\begin{DoxyCode}
+#include "DS2482.h"
+#include "JsonParserGeneratorRK.h"
+
+SerialLogHandler logHandler;
+
+DS2482 ds(Wire, 3);
+
+DS2482DeviceListStatic<10> deviceList;
+JsonWriterStatic<256> jsonWriter;
+
+const unsigned long CHECK\_PERIOD = 30000;
+unsigned long lastCheck = 10000 - CHECK\_PERIOD;
+
+void setup() \{
+    Serial.begin(9600);
+    ds.setup();
+
+    DS2482DeviceReset::run(ds, [](DS2482DeviceReset&, int status) \{
+        Serial.printlnf("deviceReset=%d", status);
+        DS2482SearchBusCommand::run(ds, deviceList, [](DS2482SearchBusCommand &obj, int status) \{
+
+            if (status != DS2482Command::RESULT\_DONE) \{
+                Serial.printlnf("DS2482SearchBusCommand status=%d", status);
+                return;
+            \}
+
+            Serial.printlnf("Found %u devices", deviceList.getDeviceCount());
+        \});
+    \});
+
+    Serial.println("setup complete");
+\}
+
+
+void loop() \{
+
+    ds.loop();
+
+    if (millis() - lastCheck >= CHECK\_PERIOD) \{
+        lastCheck = millis();
+
+        if (deviceList.getDeviceCount() > 0) \{
+
+            DS2482GetTemperatureForListCommand::run(ds, deviceList, [](DS2482GetTemperatureForListCommand&,
+       int status, DS2482DeviceList &deviceList) \{
+                if (status != DS2482Command::RESULT\_DONE) \{
+                    Serial.printlnf("DS2482GetTemperatureForListCommand status=%d", status);
+                    return;
+                \}
+
+                Serial.printlnf("got temperatures!");
+
+                // Initialize the JsonWriter object and sets it to send 2 decimal places
+                jsonWriter.init();
+                jsonWriter.setFloatPlaces(2);
+
+                // startObject is for the outer object and must be balanced with finishObjectOrArray.
+                jsonWriter.startObject();
+
+                // Write the actual temperatures
+                for(size\_t ii = 0; ii < deviceList.getDeviceCount(); ii++) \{
+                    if (deviceList.getDeviceByIndex(ii).getValid()) \{
+                        // This creates a key of the form "t0" for the first, "t1" for the second, ...
+                        char key[4];
+                        key[0] = 't';
+                        key[1] = '0' + ii;
+                        key[2] = 0;
+
+                        // Inserts the float as a key value pair
+                        jsonWriter.insertKeyValue(key, deviceList.getDeviceByIndex(ii).getTemperatureC());
+                    \}
+                \}
+
+                jsonWriter.finishObjectOrArray();
+
+                Serial.println(jsonWriter.getBuffer());
+                Particle.publish("temperature", jsonWriter.getBuffer(), PRIVATE);
+
+                // Example output:
+                // \{"t0":23.56,"t1":23.12\}
+            \});
+        \}
+        else \{
+            Serial.printlnf("no devices found");
+        \}
+    \}
+\}
+\end{DoxyCode}
+
+
+Example serial output\+:
+
+
+\begin{DoxyCode}
+got temperatures!
+\{"t0":23.56,"t1":23.12\}
+\end{DoxyCode}
+
+
+Because the 1-\/wire bus search is deterministic, it will always returns the sensors in the same order, sorted by 1-\/wire device address (increasing).
+
+\subsection*{About lambdas, fluent-\/style and more}
+
+The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} library uses a C++11 style of coding that is very powerful, but will probably be foreign to you if you learned old-\/school C and C++. It\textquotesingle{}s actually more like the way Javascript/node.\+js is programmed.
+
+One of the main advantages of the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} library is that it\textquotesingle{}s completely asynchronous. No call blocks for more than the time it takes to make an I2C transfer. This is important because getting a temperature sensor reading can take 750 milliseconds, and most D\+S18\+B20 software libraries block during conversion.
+
+\subsubsection*{Synchronous way}
+
+Using the \href{https://build.particle.io/libs/DS18B20/0.1.7/tab/DS18B20.cpp}{\tt D\+S18\+B20 library}, you make a call like this\+:
+
+
+\begin{DoxyCode}
+float tempC = ds.getTemperature(addr);
+\end{DoxyCode}
+
+
+The main loop thread is blocked during this call for 750 milliseconds, which may affect performance elsewhere in your code.
+
+\subsubsection*{State machines}
+
+One common way of implementing asynchronous code is state machines. This is a bit of pseudo-\/code of what a state machine version might look like.
+
+
+\begin{DoxyCode}
+void loop() \{
+    switch(state) \{
+    case GET\_TEMPERATURE\_STATE:
+        ds.startTemperature();
+        state = TEMPERATURE\_WAIT\_STATE;
+        break;
+
+    case TEMPERATURE\_WAIT\_STATE:
+        if (ds.isTemperatureDone()) \{
+            float temp = ds.readTemperature();
+            state = ANOTHER\_STATE;
+        \}
+        break;
+    \}
+\}
+\end{DoxyCode}
+
+
+State machines are really powerful, and actually how the \mbox{\hyperlink{class_d_s2482}{D\+S2482}} library is implemented internally, but can get a bit unwieldy.
+
+\subsubsection*{Callbacks}
+
+Callback functions are another common way of handling asynchronous code, like in this pseudo-\/code example\+:
+
+
+\begin{DoxyCode}
+void temperatureCallback(float temp) \{
+    Serial.printlnf("got temperature %f", temp);
+\}
+
+void loop() \{
+    if (millis() - lastCheck >= CHECK\_PERIOD) \{
+        lastCheck = millis();
+        ds.getTemperature(temperatureCallback);
+    \}
+\}
+\end{DoxyCode}
+
+
+The problem with callbacks is that it\textquotesingle{}s a pain to pass state data to the callback, and it requires some effort to make a callback handler a class member function.
+
+\subsubsection*{The Lambda}
+
+The lambda solves some of the problems with callbacks. Here\textquotesingle{}s an example of doing an asynchronous device reset call\+:
+
+
+\begin{DoxyCode}
+void setup() \{
+    Serial.begin(9600);
+    ds.setup();
+
+    DS2482DeviceReset::run(ds, [](DS2482DeviceReset&, int status) \{
+        Serial.printlnf("deviceReset=%d", status);
+    \});
+
+    Serial.println("setup complete");
+\}
+\end{DoxyCode}
+
+
+The syntax is a little weird, and I\textquotesingle{}ll get to that a moment, however the important thing is that this block of code, the lambda, is executed later.
+
+
+\begin{DoxyCode}
+[](DS2482DeviceReset&, int status) \{
+    Serial.printlnf("deviceReset=%d", status);
+\}
+\end{DoxyCode}
+
+
+The
+
+
+\begin{DoxyCode}
+setup complete
+\end{DoxyCode}
+
+
+message appears next.
+
+When the asynchronous device reset completes, the block runs and
+
+
+\begin{DoxyCode}
+deviceReset=1
+\end{DoxyCode}
+
+
+will likely be printed to the serial console. Note, however, that the lines after the block, like printing setup complete! won\textquotesingle{}t happen a second time.
+
+A declaration of a lambda function looks like
+
+
+\begin{DoxyCode}
+[](DS2482DeviceReset&, int status) \{
+    // Code goes here
+\}
+\end{DoxyCode}
+
+
+The {\ttfamily \mbox{[}\mbox{]}} part is the capture, which we\textquotesingle{}ll discuss in a moment, and {\ttfamily (\mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}}\&, int status)} is a function parameter declaration. Basically the callback is a function that takes two parameters, a {\ttfamily \mbox{\hyperlink{class_d_s2482_device_reset}{D\+S2482\+Device\+Reset}}\&} object (not used here) and an {\ttfamily int status} (for status).
+
+\subsubsection*{Nesting calls}
+
+This example demonstrates two handy things\+:
+
+
+\begin{DoxyItemize}
+\item Making your lambda be a class member
+\item Nesting lambdas for sequential operations
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+void TestClass::check() \{
+    DS2482SearchBusCommand::run(ds, deviceList, [this](DS2482SearchBusCommand &obj, int status) \{
+
+        if (status != DS2482Command::RESULT\_DONE) \{
+            Serial.printlnf("DS2482SearchBusCommand status=%d", status);
+            return;
+        \}
+
+        if (deviceList.getDeviceCount() == 0) \{
+            Serial.println("no devices");
+            return;
+        \}
+
+        DS2482GetTemperatureForListCommand::run(ds, obj.getDeviceList(),
+       [this](DS2482GetTemperatureForListCommand&, int status, DS2482DeviceList &deviceList) \{
+            if (status != DS2482Command::RESULT\_DONE) \{
+                Serial.printlnf("DS2482GetTemperatureForListCommand status=%d", status);
+                return;
+            \}
+
+            Serial.printlnf("got temperatures!");
+
+            for(size\_t ii = 0; ii < deviceList.getDeviceCount(); ii++) \{
+                Serial.printlnf("%s valid=%d C=%f F=%f",
+                        deviceList.getAddressByIndex(ii).toString().c\_str(),
+                        deviceList.getDeviceByIndex(ii).getValid(),
+                        deviceList.getDeviceByIndex(ii).getTemperatureC(),
+                        deviceList.getDeviceByIndex(ii).getTemperatureF());
+            \}
+
+        \});
+    \});
+\}
+\end{DoxyCode}
+
+
+You\textquotesingle{}ll notice the slightly different syntax in the capture, the part in the square brackets\+:
+
+
+\begin{DoxyCode}
+DS2482SearchBusCommand::run(ds, deviceList, [this](DS2482SearchBusCommand &obj, int status) \{
+\end{DoxyCode}
+
+
+Instead of just being {\ttfamily \mbox{[}\mbox{]}} it\textquotesingle{}s {\ttfamily \mbox{[}this\mbox{]}}. That means that {\ttfamily this}, your class instance, is captured, and available inside the lambda. It essentially makes the inner function a class member, available to access class member functions and variables.
+
+You can capture multiple variables, separated by commas. You can capture function parameters and local variables, for example.
+
+The other thing is that you can nest these, so each new indent in occurs at a later time. If you don\textquotesingle{}t like that style, however, you can just split your code into separate member functions like this\+:
+
+
+\begin{DoxyCode}
+void TestClass::searchBus() \{
+
+    DS2482SearchBusCommand::run(ds, deviceList, [this](DS2482SearchBusCommand &obj, int status) \{
+
+        if (status != DS2482Command::RESULT\_DONE) \{
+            Serial.printlnf("DS2482SearchBusCommand status=%d", status);
+            return;
+        \}
+
+        if (deviceList.getDeviceCount() == 0) \{
+            Serial.println("no devices");
+            return;
+        \}
+
+        getTemperatures();
+    \});
+\}
+
+void TestClass::getTemperatures() \{
+
+    DS2482GetTemperatureForListCommand::run(ds, deviceList, [this](DS2482GetTemperatureForListCommand&, int
+       status, DS2482DeviceList &deviceList) \{
+        if (status != DS2482Command::RESULT\_DONE) \{
+            Serial.printlnf("DS2482GetTemperatureForListCommand status=%d", status);
+            return;
+        \}
+
+        Serial.printlnf("got temperatures!");
+
+        for(size\_t ii = 0; ii < deviceList.getDeviceCount(); ii++) \{
+            Serial.printlnf("%s valid=%d C=%f F=%f",
+                    deviceList.getAddressByIndex(ii).toString().c\_str(),
+                    deviceList.getDeviceByIndex(ii).getValid(),
+                    deviceList.getDeviceByIndex(ii).getTemperatureC(),
+                    deviceList.getDeviceByIndex(ii).getTemperatureF());
+        \}
+    \});
+
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Optional parameters}
+
+Within the library, optional parameters are passed fluent-\/style instead of using C++ optional parameters. The fluent-\/style parameters are easier to identify and don\textquotesingle{}t depend on order. For example\+:
+
+
+\begin{DoxyCode}
+DS2482GetTemperatureCommand::run(ds, addr, [this,completion](DS2482GetTemperatureCommand&, int status,
+       float t) \{
+        if (status != DS2482Command::RESULT\_DONE) \{
+            Log.error("FAILURE DS2482GetTemperatureCommand failed %d bus %s", status, name.c\_str());
+            completion();
+            return;
+        \}
+
+        testsComplete(completion);
+    \}).withParasiticPower(isParasiticPowered).withMaxRetries(1);
+\end{DoxyCode}
+
+
+Of note\+:
+
+
+\begin{DoxyItemize}
+\item The optional parameters go after the {\ttfamily \})} that closes the run command.
+\item You can chain as many or as few as you want in any order.
+\item The names all begin with {\ttfamily with}.
+\end{DoxyItemize}
+
+In this example, it uses parasitic power or not based on the member variable {\ttfamily is\+Parasitic\+Powered} and limits the number of retries to 1.
+
+\subsubsection*{Run methods}
+
+All of the asynchronous functions are implemented as separate classes with a static run method. For example {\ttfamily \mbox{\hyperlink{class_d_s2482_get_temperature_command_a91c9ee5048047d209e3dd1effa1ba179}{D\+S2482\+Get\+Temperature\+Command\+::run}}}.
+
+This is done because the objects need to be allocated on the heap (using new), not stack allocated. Since they continue after your function returns, stack allocated classes wouldn\textquotesingle{}t work because they would go away when the enclosing function returns.
+
+The run methods take care of allocated the objects and enqueueing them for execution so they make sure the objects gets delete later, as well.
+
+\subsection*{Library documentation}
+
+The full library documentation can be found here. It\textquotesingle{}s automatically generated from the .h file, so you can read the comments there as well.
+
+\subsection*{Hardware examples}

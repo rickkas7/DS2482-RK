@@ -1,0 +1,83 @@
+\hypertarget{class_d_s24821_wire_command}{}\section{D\+S24821\+Wire\+Command Class Reference}
+\label{class_d_s24821_wire_command}\index{D\+S24821\+Wire\+Command@{D\+S24821\+Wire\+Command}}
+
+
+Low-\/level class to send a 1-\/wire command and read a number of bytes back. You won\textquotesingle{}t need to call this directly.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S24821\+Wire\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_d_s24821_wire_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_a27e758f6a1de1f23ece963df35531dc5}\label{class_d_s24821_wire_command_a27e758f6a1de1f23ece963df35531dc5}} 
+size\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_command_a27e758f6a1de1f23ece963df35531dc5}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of bytes that have been saved in the buffer so far. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_a71e935efbfc8c77e45cd45358fa3396c}\label{class_d_s24821_wire_command_a71e935efbfc8c77e45cd45358fa3396c}} 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_d_s24821_wire_command_a71e935efbfc8c77e45cd45358fa3396c}{get\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Gets a pointer to the buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \mbox{\hyperlink{class_d_s24821_wire_command_ab00d3a0b120d3cc33675165d1174aa16}{get\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Gets the buffer as a 1-\/wire address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s24821_wire_command_a721ceae3f65419340b0ea0efa75a37a6}{check\+C\+RC}} () const
+\begin{DoxyCompactList}\small\item\em Checks the C\+RC of the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_a0c487fb5b756a58a9daa78ebc83bed6b}\label{class_d_s24821_wire_command_a0c487fb5b756a58a9daa78ebc83bed6b}} 
+\mbox{\hyperlink{class_d_s24821_wire_command_a0c487fb5b756a58a9daa78ebc83bed6b}{D\+S24821\+Wire\+Command}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, uint8\+\_\+t cmd, size\+\_\+t read\+Size, std\+::function$<$ void(\mbox{\hyperlink{class_d_s24821_wire_command}{D\+S24821\+Wire\+Command}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Sends a 1-\/wire command and reads bytes back. Used internally. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_aa64fcd820dfc1621af7eeef0c03844c6}\label{class_d_s24821_wire_command_aa64fcd820dfc1621af7eeef0c03844c6}} 
+virtual \mbox{\hyperlink{class_d_s24821_wire_command_aa64fcd820dfc1621af7eeef0c03844c6}{$\sim$\+D\+S24821\+Wire\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_ab07546a36f9d4e04f098e6aec81b0496}\label{class_d_s24821_wire_command_ab07546a36f9d4e04f098e6aec81b0496}} 
+virtual int \mbox{\hyperlink{class_d_s24821_wire_command_ab07546a36f9d4e04f098e6aec81b0496}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Used to provide allow the command to executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s24821_wire_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Low-\/level class to send a 1-\/wire command and read a number of bytes back. You won\textquotesingle{}t need to call this directly. 
+
+There is no run method in this class as it\textquotesingle{}s only subclassed by specific commands. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s24821_wire_command_a721ceae3f65419340b0ea0efa75a37a6}\label{class_d_s24821_wire_command_a721ceae3f65419340b0ea0efa75a37a6}} 
+\index{D\+S24821\+Wire\+Command@{D\+S24821\+Wire\+Command}!check\+C\+RC@{check\+C\+RC}}
+\index{check\+C\+RC@{check\+C\+RC}!D\+S24821\+Wire\+Command@{D\+S24821\+Wire\+Command}}
+\subsubsection{\texorpdfstring{check\+C\+R\+C()}{checkCRC()}}
+{\footnotesize\ttfamily bool D\+S24821\+Wire\+Command\+::check\+C\+RC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks the C\+RC of the buffer. 
+
+The assumption is that the C\+RC value will be at (offset -\/ 1). It will calculate the C\+RC of the bytes from 0 to (offset -\/ 2) inclusive. \mbox{\Hypertarget{class_d_s24821_wire_command_ab00d3a0b120d3cc33675165d1174aa16}\label{class_d_s24821_wire_command_ab00d3a0b120d3cc33675165d1174aa16}} 
+\index{D\+S24821\+Wire\+Command@{D\+S24821\+Wire\+Command}!get\+Address@{get\+Address}}
+\index{get\+Address@{get\+Address}!D\+S24821\+Wire\+Command@{D\+S24821\+Wire\+Command}}
+\subsubsection{\texorpdfstring{get\+Address()}{getAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} D\+S24821\+Wire\+Command\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the buffer as a 1-\/wire address. 
+
+A copy is returned as a \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} object. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

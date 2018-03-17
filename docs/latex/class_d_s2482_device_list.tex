@@ -1,0 +1,179 @@
+\hypertarget{class_d_s2482_device_list}{}\section{D\+S2482\+Device\+List Class Reference}
+\label{class_d_s2482_device_list}\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+
+
+Holds an array of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Device\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_device_list}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_a86b3c60a954e4410fccc03f77e3942fd}\label{class_d_s2482_device_list_a86b3c60a954e4410fccc03f77e3942fd}} 
+\mbox{\hyperlink{class_d_s2482_device_list_a86b3c60a954e4410fccc03f77e3942fd}{D\+S2482\+Device\+List}} (\mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} $\ast$\mbox{\hyperlink{class_d_s2482_device_list_a37b73673e20f29e7544d5292617815b2}{devices}}, size\+\_\+t \mbox{\hyperlink{class_d_s2482_device_list_a88e117c26f150a9930dd5b65d5733b69}{device\+Max}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} object with an array of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_a7404b545d1704d84a0662255aa3ffe90}\label{class_d_s2482_device_list_a7404b545d1704d84a0662255aa3ffe90}} 
+virtual \mbox{\hyperlink{class_d_s2482_device_list_a7404b545d1704d84a0662255aa3ffe90}{$\sim$\+D\+S2482\+Device\+List}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s2482_device_list_a86c4f24502b9cb73376a6b102bb27f52}{add\+Address}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} to the device list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_a8051df54601455c0ba9573b3089b3091}\label{class_d_s2482_device_list_a8051df54601455c0ba9573b3089b3091}} 
+void \mbox{\hyperlink{class_d_s2482_device_list_a8051df54601455c0ba9573b3089b3091}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears add of the objects in the array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s2482_device_list_a2775548aa0394724d64a73f48b93f938}{clear\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Clears all of the valid values in the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \mbox{\hyperlink{class_d_s2482_device_list_a6957f627e300638c9d25313664bc65e1}{get\+Address\+By\+Index}} (size\+\_\+t ii)
+\begin{DoxyCompactList}\small\item\em Gets the 1-\/wire address of a device in list by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} \& \mbox{\hyperlink{class_d_s2482_device_list_af135ad9891b100429037bb4101ae7ba6}{get\+Device\+By\+Index}} (size\+\_\+t ii)
+\begin{DoxyCompactList}\small\item\em Gets the \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} of a device in list by index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} \& \mbox{\hyperlink{class_d_s2482_device_list_a8063e2911399c2f957f05d9e41bad9fa}{get\+Device\+By\+Index}} (size\+\_\+t ii) const
+\begin{DoxyCompactList}\small\item\em Gets the \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} of a device in list by index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_device_list_aa7fdfbd1db3a6f22aff1135e7a566666}{get\+Device\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of devices in the list (devices that have been added) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_device_list_a20680f2eeb04a5db9f0e82d8ceff872e}{get\+Device\+Max}} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of devices that can be added, based on the size of the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_a37b73673e20f29e7544d5292617815b2}\label{class_d_s2482_device_list_a37b73673e20f29e7544d5292617815b2}} 
+\mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} $\ast$ \mbox{\hyperlink{class_d_s2482_device_list_a37b73673e20f29e7544d5292617815b2}{devices}}
+\begin{DoxyCompactList}\small\item\em The array of device objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_adf94f4f9e2287e70b4b249991ddb059e}\label{class_d_s2482_device_list_adf94f4f9e2287e70b4b249991ddb059e}} 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_device_list_adf94f4f9e2287e70b4b249991ddb059e}{device\+Count}}
+\begin{DoxyCompactList}\small\item\em The number of devices currently in the list (0 = none, 1 = one, ...) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_list_a88e117c26f150a9930dd5b65d5733b69}\label{class_d_s2482_device_list_a88e117c26f150a9930dd5b65d5733b69}} 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_device_list_a88e117c26f150a9930dd5b65d5733b69}{device\+Max}}
+\begin{DoxyCompactList}\small\item\em The maximum number of objects in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds an array of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects. 
+
+Normally you will use \mbox{\hyperlink{class_d_s2482_device_list_static}{D\+S2482\+Device\+List\+Static}}, below, instead of instantiating this object directly.
+
+This class does not allocate memory; you pass in a buffer and length and it keeps track of the number of devices in the list. Note that device\+Max is in number of \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} objects; the actual size in bytes is 16 times that. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_device_list_a86c4f24502b9cb73376a6b102bb27f52}\label{class_d_s2482_device_list_a86c4f24502b9cb73376a6b102bb27f52}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!add\+Address@{add\+Address}}
+\index{add\+Address@{add\+Address}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{add\+Address()}{addAddress()}}
+{\footnotesize\ttfamily bool D\+S2482\+Device\+List\+::add\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Adds a \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} to the device list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The 1-\/wire address to add. addr is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the address was added or false if the device list is full. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_s2482_device_list_a2775548aa0394724d64a73f48b93f938}\label{class_d_s2482_device_list_a2775548aa0394724d64a73f48b93f938}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!clear\+Valid@{clear\+Valid}}
+\index{clear\+Valid@{clear\+Valid}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{clear\+Valid()}{clearValid()}}
+{\footnotesize\ttfamily void D\+S2482\+Device\+List\+::clear\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears all of the valid values in the array. 
+
+This is done before reading temperatures using D\+S24821\+Get\+Temperature\+For\+List\+Command. \mbox{\Hypertarget{class_d_s2482_device_list_a6957f627e300638c9d25313664bc65e1}\label{class_d_s2482_device_list_a6957f627e300638c9d25313664bc65e1}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!get\+Address\+By\+Index@{get\+Address\+By\+Index}}
+\index{get\+Address\+By\+Index@{get\+Address\+By\+Index}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{get\+Address\+By\+Index()}{getAddressByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} D\+S2482\+Device\+List\+::get\+Address\+By\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the 1-\/wire address of a device in list by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ii} & The index to retrieve (0 is the first element)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The address as a \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} (copied) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_s2482_device_list_af135ad9891b100429037bb4101ae7ba6}\label{class_d_s2482_device_list_af135ad9891b100429037bb4101ae7ba6}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!get\+Device\+By\+Index@{get\+Device\+By\+Index}}
+\index{get\+Device\+By\+Index@{get\+Device\+By\+Index}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{get\+Device\+By\+Index()}{getDeviceByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}}\& D\+S2482\+Device\+List\+::get\+Device\+By\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} of a device in list by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ii} & The index to retrieve (0 is the first element)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object (the actual object reference, not copied) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_s2482_device_list_a8063e2911399c2f957f05d9e41bad9fa}\label{class_d_s2482_device_list_a8063e2911399c2f957f05d9e41bad9fa}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!get\+Device\+By\+Index@{get\+Device\+By\+Index}}
+\index{get\+Device\+By\+Index@{get\+Device\+By\+Index}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{get\+Device\+By\+Index()}{getDeviceByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}}\& D\+S2482\+Device\+List\+::get\+Device\+By\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ii }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} of a device in list by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ii} & The index to retrieve (0 is the first element)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object (the actual object reference, not copied) as a const object that can\textquotesingle{}t be modified.
+\end{DoxyReturn}
+Note that \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} supports the copy operator and copy constructor so it\textquotesingle{}s easy to make your own copy of it. \mbox{\Hypertarget{class_d_s2482_device_list_aa7fdfbd1db3a6f22aff1135e7a566666}\label{class_d_s2482_device_list_aa7fdfbd1db3a6f22aff1135e7a566666}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!get\+Device\+Count@{get\+Device\+Count}}
+\index{get\+Device\+Count@{get\+Device\+Count}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{get\+Device\+Count()}{getDeviceCount()}}
+{\footnotesize\ttfamily size\+\_\+t D\+S2482\+Device\+List\+::get\+Device\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of devices in the list (devices that have been added) 
+
+\begin{DoxyReturn}{Returns}
+The number of added devices (0 = none, 1 = one, ...) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_s2482_device_list_a20680f2eeb04a5db9f0e82d8ceff872e}\label{class_d_s2482_device_list_a20680f2eeb04a5db9f0e82d8ceff872e}} 
+\index{D\+S2482\+Device\+List@{D\+S2482\+Device\+List}!get\+Device\+Max@{get\+Device\+Max}}
+\index{get\+Device\+Max@{get\+Device\+Max}!D\+S2482\+Device\+List@{D\+S2482\+Device\+List}}
+\subsubsection{\texorpdfstring{get\+Device\+Max()}{getDeviceMax()}}
+{\footnotesize\ttfamily size\+\_\+t D\+S2482\+Device\+List\+::get\+Device\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the maximum number of devices that can be added, based on the size of the array. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of devices that can be added
+\end{DoxyReturn}
+If \mbox{\hyperlink{class_d_s2482_device_list_aa7fdfbd1db3a6f22aff1135e7a566666}{get\+Device\+Count()}} == \mbox{\hyperlink{class_d_s2482_device_list_a20680f2eeb04a5db9f0e82d8ceff872e}{get\+Device\+Max()}} then the list is full and no more can be added. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

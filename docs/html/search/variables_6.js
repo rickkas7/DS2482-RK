@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['read_5fbyte_5fcmd',['READ_BYTE_CMD',['../class_d_s2482_command.html#a9a8167173486cb0585899e1464118f9b',1,'DS2482Command']]],
+  ['read_5fdata_5freg',['READ_DATA_REG',['../class_d_s2482_command.html#aea747fc26b19aa8bb8fa7e507a879f73',1,'DS2482Command']]],
+  ['read_5fpower_5fsupply',['READ_POWER_SUPPLY',['../class_d_s2482_command.html#a6785f84f3853dcc3422e13152457b712',1,'DS2482Command']]],
+  ['read_5from',['READ_ROM',['../class_d_s2482_command.html#a4ab109c6e299de83ec70028ea7e3d709',1,'DS2482Command']]],
+  ['read_5fscratchpad',['READ_SCRATCHPAD',['../class_d_s2482_command.html#af89bb64ce4210189165648c3142192ab',1,'DS2482Command']]],
+  ['recall_5fe2',['RECALL_E2',['../class_d_s2482_command.html#a3ac026bc1c7c941e9246e11e4ff19de4',1,'DS2482Command']]],
+  ['reset_5f1wire_5fcmd',['RESET_1WIRE_CMD',['../class_d_s2482_command.html#a41ad7adcb0a4cb8df1ce78e61e6f7ab8',1,'DS2482Command']]],
+  ['result_5f1wire_5fbusy',['RESULT_1WIRE_BUSY',['../class_d_s2482_command.html#ad0e7e2dd735bcca35f08f221d0deb9fd',1,'DS2482Command']]],
+  ['result_5f1wire_5fno_5fdevice',['RESULT_1WIRE_NO_DEVICE',['../class_d_s2482_command.html#a9245acf172ffaa7c956e4de5d405c7e8',1,'DS2482Command']]],
+  ['result_5f1wire_5fshort',['RESULT_1WIRE_SHORT',['../class_d_s2482_command.html#a68f67a7645f16cdb8a4c88eeda6c711c',1,'DS2482Command']]],
+  ['result_5fdone',['RESULT_DONE',['../class_d_s2482_command.html#a8ffcf84807c97928dbfc61d75788e32b',1,'DS2482Command']]],
+  ['result_5fi2c_5fcommand_5ftimeout',['RESULT_I2C_COMMAND_TIMEOUT',['../class_d_s2482_command.html#a99ae8c5d50b7e7564cc2461bb96984d9',1,'DS2482Command']]],
+  ['result_5fi2c_5fendtransmission_5faddress_5ferror',['RESULT_I2C_ENDTRANSMISSION_ADDRESS_ERROR',['../class_d_s2482_command.html#a86ab4e71883e0d7aafec142fe1010c35',1,'DS2482Command']]],
+  ['result_5fi2c_5fendtransmission_5fafter_5ftransfer_5ferror',['RESULT_I2C_ENDTRANSMISSION_AFTER_TRANSFER_ERROR',['../class_d_s2482_command.html#a20e56c958623278decd13f644c5f680a',1,'DS2482Command']]],
+  ['result_5fi2c_5fendtransmission_5fbusy_5ferror',['RESULT_I2C_ENDTRANSMISSION_BUSY_ERROR',['../class_d_s2482_command.html#a07c18f39af72106ebf86b0cdfb315a83',1,'DS2482Command']]],
+  ['result_5fi2c_5fendtransmission_5fstart_5ferror',['RESULT_I2C_ENDTRANSMISSION_START_ERROR',['../class_d_s2482_command.html#a5a96cae08078b71152cba451e580e812',1,'DS2482Command']]],
+  ['result_5fi2c_5fendtransmission_5ftransfer_5ferror',['RESULT_I2C_ENDTRANSMISSION_TRANSFER_ERROR',['../class_d_s2482_command.html#a84eb07550c7499ea510a32e4d968ed79',1,'DS2482Command']]],
+  ['result_5fi2c_5fread_5ftimeout',['RESULT_I2C_READ_TIMEOUT',['../class_d_s2482_command.html#aa506510a75cc5ea560b105b03aa332f1',1,'DS2482Command']]],
+  ['result_5fsearch_5ffailed',['RESULT_SEARCH_FAILED',['../class_d_s2482_command.html#a1cdbef7fe0719f81be99c61c1e30add8',1,'DS2482Command']]],
+  ['result_5fset_5fchannel_5ffailed',['RESULT_SET_CHANNEL_FAILED',['../class_d_s2482_command.html#a720edc489f87ff11c34fdc786857ee29',1,'DS2482Command']]],
+  ['result_5ftoo_5fmany_5fretries',['RESULT_TOO_MANY_RETRIES',['../class_d_s2482_command.html#aa1d0b42dd911092678874aa976f4830f',1,'DS2482Command']]],
+  ['result_5fworking',['RESULT_WORKING',['../class_d_s2482_command.html#a269ffc6a2090135a5e5909525598a21d',1,'DS2482Command']]],
+  ['retries_5fdefault',['RETRIES_DEFAULT',['../class_d_s2482_command.html#a0324b281b9bf9370c3f9763e325d4797',1,'DS2482Command']]]
+];

@@ -1,0 +1,119 @@
+\hypertarget{class_d_s2482_set_config_command}{}\section{D\+S2482\+Set\+Config\+Command Class Reference}
+\label{class_d_s2482_set_config_command}\index{D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}}
+
+
+Sets the configuration for a device.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Set\+Config\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_set_config_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \& \mbox{\hyperlink{class_d_s2482_set_config_command_a9c1f96c1cb321f98970df4ef12bd97a7}{with\+Parasitic\+Power}} (bool value=true)
+\item 
+\mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \& \mbox{\hyperlink{class_d_s2482_set_config_command_a90b06127e4a7f88a3f4b4a69546f6e53}{with\+TL}} (int8\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \& \mbox{\hyperlink{class_d_s2482_set_config_command_aab39af606ba1bf9a00e05129c7bd4fc9}{with\+TH}} (int8\+\_\+t value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \& \mbox{\hyperlink{class_d_s2482_set_config_command_afbf596cbb1c6e8f5d97918aa54946d2f}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&device\+List, bool save\+To\+E\+E\+P\+R\+OM, int conversion\+Size, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Run a D\+S18\+B20 set configuration command to set D\+S18\+B20 configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_set_config_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_set_config_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Sets the configuration for a device. 
+
+Normally this is done to change the number of bits of conversion precision. It can be used for the alarm feature as well, but alarm is not supported by this library because the operation is a little strange and I\textquotesingle{}m not really convinced that it\textquotesingle{}s that useful.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_set_config_command_afbf596cbb1c6e8f5d97918aa54946d2f}\label{class_d_s2482_set_config_command_afbf596cbb1c6e8f5d97918aa54946d2f}} 
+\index{D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \& D\+S2482\+Set\+Config\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{\mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&}]{device\+List,  }\item[{bool}]{save\+To\+E\+E\+P\+R\+OM,  }\item[{int}]{conversion\+Size,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}} \&, int status)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run a D\+S18\+B20 set configuration command to set D\+S18\+B20 configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to. If it\textquotesingle{}s a D\+S2482\+\_\+800, make sure you set the channel as well.\\
+\hline
+{\em device\+List} & The list of devices you want to set the configuration on.\\
+\hline
+{\em save\+To\+E\+E\+P\+R\+OM} & Saves the configuration settings to E\+E\+P\+R\+OM so they will be reused when power is reset.\\
+\hline
+{\em conversion\+Size} & The number of bits of conversion to do. The constants are defined in the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} class and are one of\+: C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+9\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+10\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+11\+B\+IT, or C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. At 9 bits, the resolution is 1/2 degrees C. At 12 bits, the resolution is 1/16 degrees C. The factory default hardware setting is 12 bits.\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded. If it\textquotesingle{}s any other value an error occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new configuration object so you can use the optional settings like with\+Parasitic\+Power, fluent-\/style.
+\end{DoxyReturn}
+Reducing the resolution reduces the amount of time to capture the current temperature (ConvertT)\+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Bits  }&\textbf{ Time (milliseconds)   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Bits  }&\textbf{ Time (milliseconds)   }\\\cline{1-2}
+\endhead
+9  &94   \\\cline{1-2}
+10  &188   \\\cline{1-2}
+11  &375   \\\cline{1-2}
+12  &750   \\\cline{1-2}
+\end{longtabu}
+
+
+It doesn\textquotesingle{}t affect the amount of data transmitted by the sensors; that\textquotesingle{}s always 9 bytes, regardless of resolution.
+
+This call executes asynchronously. The completion function is called when complete or an error occurs. \mbox{\Hypertarget{class_d_s2482_set_config_command_a9c1f96c1cb321f98970df4ef12bd97a7}\label{class_d_s2482_set_config_command_a9c1f96c1cb321f98970df4ef12bd97a7}} 
+\index{D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}!with\+Parasitic\+Power@{with\+Parasitic\+Power}}
+\index{with\+Parasitic\+Power@{with\+Parasitic\+Power}!D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}}
+\subsubsection{\texorpdfstring{with\+Parasitic\+Power()}{withParasiticPower()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}}\& D\+S2482\+Set\+Config\+Command\+::with\+Parasitic\+Power (\begin{DoxyParamCaption}\item[{bool}]{value = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets whether to use parasitic power or not. The default is false. \mbox{\Hypertarget{class_d_s2482_set_config_command_aab39af606ba1bf9a00e05129c7bd4fc9}\label{class_d_s2482_set_config_command_aab39af606ba1bf9a00e05129c7bd4fc9}} 
+\index{D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}!with\+TH@{with\+TH}}
+\index{with\+TH@{with\+TH}!D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}}
+\subsubsection{\texorpdfstring{with\+T\+H()}{withTH()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}}\& D\+S2482\+Set\+Config\+Command\+::with\+TH (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the TH value, the hugh temperature alarm, which can also be used as an arbitrarary 8-\/bit value stored in E\+E\+P\+R\+OM. \mbox{\Hypertarget{class_d_s2482_set_config_command_a90b06127e4a7f88a3f4b4a69546f6e53}\label{class_d_s2482_set_config_command_a90b06127e4a7f88a3f4b4a69546f6e53}} 
+\index{D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}!with\+TL@{with\+TL}}
+\index{with\+TL@{with\+TL}!D\+S2482\+Set\+Config\+Command@{D\+S2482\+Set\+Config\+Command}}
+\subsubsection{\texorpdfstring{with\+T\+L()}{withTL()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_set_config_command}{D\+S2482\+Set\+Config\+Command}}\& D\+S2482\+Set\+Config\+Command\+::with\+TL (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the TL value, the low temperature alarm, which can also be used as an arbitrarary 8-\/bit value stored in E\+E\+P\+R\+OM. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

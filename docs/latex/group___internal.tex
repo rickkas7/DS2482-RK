@@ -1,0 +1,38 @@
+\hypertarget{group___internal}{}\section{Internal and low-\/level classes}
+\label{group___internal}\index{Internal and low-\/level classes@{Internal and low-\/level classes}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_s2482_command_list}{D\+S2482\+Command\+List}}
+\begin{DoxyCompactList}\small\item\em Used internally to hold a list of command objects to run. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_reset}{D\+S24821\+Wire\+Reset}}
+\begin{DoxyCompactList}\small\item\em Resets the 1-\/wire bus. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_read_byte}{D\+S24821\+Wire\+Read\+Byte}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to read a byte from the 1-\/wire bus. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_write_byte}{D\+S24821\+Wire\+Write\+Byte}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to write a byte to the 1-\/wire bus. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_triplet}{D\+S24821\+Wire\+Triplet}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to generate a 1-\/wire triplet, used for bus search. You won\textquotesingle{}t need to call this directly. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_command}{D\+S24821\+Wire\+Command}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a 1-\/wire command and read a number of bytes back. You won\textquotesingle{}t need to call this directly. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s24821_wire_send_address}{D\+S24821\+Wire\+Send\+Address}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a 1-\/wire address. You won\textquotesingle{}t need to call this directly. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_read_rom}{D\+S2482\+Read\+Rom}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a R\+E\+A\+D\+\_\+\+R\+OM command. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_skip_rom}{D\+S2482\+Skip\+Rom}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a S\+K\+I\+P\+\_\+\+R\+OM command. This is used internally by D\+S2482\+Read\+Scratchpad and others. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_match_rom}{D\+S2482\+Match\+Rom}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a M\+A\+T\+C\+H\+\_\+\+R\+OM command. This is used internally by D\+S2482\+Read\+Scratchpad and others. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_search_rom}{D\+S2482\+Search\+Rom}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a S\+E\+A\+R\+C\+H\+\_\+\+R\+OM command. Normally you\textquotesingle{}d use \mbox{\hyperlink{class_d_s2482_search_bus_command}{D\+S2482\+Search\+Bus\+Command}} instead. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}}
+\begin{DoxyCompactList}\small\item\em Low-\/level class to send a C\+O\+N\+V\+E\+R\+T\+\_\+T command. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_read_scratchpad_command}{D\+S2482\+Read\+Scratchpad\+Command}}
+\begin{DoxyCompactList}\small\item\em Low-\/level call to read the scratchpad. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_d_s2482_read_scratchpad_internal}{D\+S2482\+Read\+Scratchpad\+Internal}}
+\begin{DoxyCompactList}\small\item\em Used internally to do the actual read scratchpad operation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_d_s2482_search_branch_point}{D\+S2482\+Search\+Branch\+Point}}
+\begin{DoxyCompactList}\small\item\em Internal struct used during 1-\/wire bus searches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}

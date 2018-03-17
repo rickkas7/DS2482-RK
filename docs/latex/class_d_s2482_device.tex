@@ -1,0 +1,150 @@
+\hypertarget{class_d_s2482_device}{}\section{D\+S2482\+Device Class Reference}
+\label{class_d_s2482_device}\index{D\+S2482\+Device@{D\+S2482\+Device}}
+
+
+Holds the address and temperature for a single D\+S18\+B20 the 1-\/wire bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_a4a69ea2cd0957ecade28deb98f9ec515}\label{class_d_s2482_device_a4a69ea2cd0957ecade28deb98f9ec515}} 
+\mbox{\hyperlink{class_d_s2482_device_a4a69ea2cd0957ecade28deb98f9ec515}{D\+S2482\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_a3fd7f9463d2660fa2feca97d51924de0}\label{class_d_s2482_device_a3fd7f9463d2660fa2feca97d51924de0}} 
+virtual \mbox{\hyperlink{class_d_s2482_device_a3fd7f9463d2660fa2feca97d51924de0}{$\sim$\+D\+S2482\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s2482_device_adf7bcc962188f30c285057f28914bf2a}{D\+S2482\+Device}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&\mbox{\hyperlink{class_d_s2482_device_a83f16b37bc9a89032f9a3e4d096f2e1e}{addr}})
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_adcff18cd19c99b0c297d9dd70baf6bb7}\label{class_d_s2482_device_adcff18cd19c99b0c297d9dd70baf6bb7}} 
+\mbox{\hyperlink{class_d_s2482_device_adcff18cd19c99b0c297d9dd70baf6bb7}{D\+S2482\+Device}} (const \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object from another \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} (copy constructor). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_ab3f97de99e7502b3779df956ad51a330}\label{class_d_s2482_device_ab3f97de99e7502b3779df956ad51a330}} 
+\mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} \& \mbox{\hyperlink{class_d_s2482_device_ab3f97de99e7502b3779df956ad51a330}{operator=}} (const \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} \&other)
+\begin{DoxyCompactList}\small\item\em Copies another \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object values into this one. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_d_s2482_device_aba40245ed81c0995c4c2de97ca5de032}{to\+String}} () const
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_a2b496358123002cfa29a0f8c08ae10d9}\label{class_d_s2482_device_a2b496358123002cfa29a0f8c08ae10d9}} 
+void \mbox{\hyperlink{class_d_s2482_device_a2b496358123002cfa29a0f8c08ae10d9}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the address, temperature, and valid flags. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_s2482_device_a62d317b9ec8b672fbeb8c16fa480ddd7}{get\+TemperatureC}} () const
+\begin{DoxyCompactList}\small\item\em Gets the temperature in degrees Celsius. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_s2482_device_a61ede76341c0c6409ae3faecadbd1545}{get\+TemperatureF}} () const
+\begin{DoxyCompactList}\small\item\em Gets the temperature in degrees Fahrenheit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s2482_device_af1891adba72138aa522b258cc6d4026e}{set\+TemperatureC}} (float value)
+\begin{DoxyCompactList}\small\item\em Sets the temperature in degrees Celsius. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s2482_device_a50eeb974bc88c7f2a1c3133a9f1cf8bb}{get\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Gets the valid flag for this temperature reading. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_a5910ab0269dfbbeb399ab38213ca7e49}\label{class_d_s2482_device_a5910ab0269dfbbeb399ab38213ca7e49}} 
+void \mbox{\hyperlink{class_d_s2482_device_a5910ab0269dfbbeb399ab38213ca7e49}{set\+Valid}} (bool value)
+\begin{DoxyCompactList}\small\item\em Sets the valid flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_afaef2b385d85c7dd8dd78e6b86cb5751}\label{class_d_s2482_device_afaef2b385d85c7dd8dd78e6b86cb5751}} 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \mbox{\hyperlink{class_d_s2482_device_afaef2b385d85c7dd8dd78e6b86cb5751}{get\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Gets a copy of the \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s2482_device_a97f56684da4d9b9670d21041e5da15f4}{set\+Address}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&\mbox{\hyperlink{class_d_s2482_device_a83f16b37bc9a89032f9a3e4d096f2e1e}{addr}})
+\begin{DoxyCompactList}\small\item\em Sets the 1-\/wire address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_device_a83f16b37bc9a89032f9a3e4d096f2e1e}\label{class_d_s2482_device_a83f16b37bc9a89032f9a3e4d096f2e1e}} 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \mbox{\hyperlink{class_d_s2482_device_a83f16b37bc9a89032f9a3e4d096f2e1e}{addr}}
+\begin{DoxyCompactList}\small\item\em The 1-\/wire address (8 bytes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_ac69467f7fd8e076dffc9c0fc6c728dd0}\label{class_d_s2482_device_ac69467f7fd8e076dffc9c0fc6c728dd0}} 
+float \mbox{\hyperlink{class_d_s2482_device_ac69467f7fd8e076dffc9c0fc6c728dd0}{temperatureC}}
+\begin{DoxyCompactList}\small\item\em The last temperature in degrees Celsius. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_device_ae07027aa55716a3bf25ae28379aa48ce}\label{class_d_s2482_device_ae07027aa55716a3bf25ae28379aa48ce}} 
+bool \mbox{\hyperlink{class_d_s2482_device_ae07027aa55716a3bf25ae28379aa48ce}{valid}}
+\begin{DoxyCompactList}\small\item\em True if the last temperature read was successful. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds the address and temperature for a single D\+S18\+B20 the 1-\/wire bus. 
+
+This hold the address, the last temperature, and whether the last retrieval was valid or not. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_s2482_device_adf7bcc962188f30c285057f28914bf2a}\label{class_d_s2482_device_adf7bcc962188f30c285057f28914bf2a}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!D\+S2482\+Device@{D\+S2482\+Device}}
+\index{D\+S2482\+Device@{D\+S2482\+Device}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{D\+S2482\+Device()}{DS2482Device()}}
+{\footnotesize\ttfamily D\+S2482\+Device\+::\+D\+S2482\+Device (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{class_d_s2482_device}{D\+S2482\+Device}} object from a 1-\/wire address \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_device_a62d317b9ec8b672fbeb8c16fa480ddd7}\label{class_d_s2482_device_a62d317b9ec8b672fbeb8c16fa480ddd7}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!get\+TemperatureC@{get\+TemperatureC}}
+\index{get\+TemperatureC@{get\+TemperatureC}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{get\+Temperature\+C()}{getTemperatureC()}}
+{\footnotesize\ttfamily float D\+S2482\+Device\+::get\+TemperatureC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the temperature in degrees Celsius. 
+
+Note that the resolution depends on the conversion bit settings. It ranges from 1/2 degree (9-\/bit) to 1/16 degree (12-\/bit) \mbox{\Hypertarget{class_d_s2482_device_a61ede76341c0c6409ae3faecadbd1545}\label{class_d_s2482_device_a61ede76341c0c6409ae3faecadbd1545}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!get\+TemperatureF@{get\+TemperatureF}}
+\index{get\+TemperatureF@{get\+TemperatureF}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{get\+Temperature\+F()}{getTemperatureF()}}
+{\footnotesize\ttfamily float D\+S2482\+Device\+::get\+TemperatureF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the temperature in degrees Fahrenheit. 
+
+The D\+S18\+B20 uses Celsius internally, so the resolution is reflected in that. The degrees F is the actual converted value and may have more decimal places. \mbox{\Hypertarget{class_d_s2482_device_a50eeb974bc88c7f2a1c3133a9f1cf8bb}\label{class_d_s2482_device_a50eeb974bc88c7f2a1c3133a9f1cf8bb}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!get\+Valid@{get\+Valid}}
+\index{get\+Valid@{get\+Valid}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{get\+Valid()}{getValid()}}
+{\footnotesize\ttfamily bool D\+S2482\+Device\+::get\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the valid flag for this temperature reading. 
+
+When getting a list of temperatures using \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}}, it\textquotesingle{}s possible that not every sensor will return a value. The get\+Valid allows you to figure out which ones are valid. \mbox{\Hypertarget{class_d_s2482_device_a97f56684da4d9b9670d21041e5da15f4}\label{class_d_s2482_device_a97f56684da4d9b9670d21041e5da15f4}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!set\+Address@{set\+Address}}
+\index{set\+Address@{set\+Address}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{set\+Address()}{setAddress()}}
+{\footnotesize\ttfamily void D\+S2482\+Device\+::set\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the 1-\/wire address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address to set.\\
+\hline
+\end{DoxyParams}
+The addr is copied, so it does not need to be preserved after this call completes. \mbox{\Hypertarget{class_d_s2482_device_af1891adba72138aa522b258cc6d4026e}\label{class_d_s2482_device_af1891adba72138aa522b258cc6d4026e}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!set\+TemperatureC@{set\+TemperatureC}}
+\index{set\+TemperatureC@{set\+TemperatureC}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{set\+Temperature\+C()}{setTemperatureC()}}
+{\footnotesize\ttfamily void D\+S2482\+Device\+::set\+TemperatureC (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the temperature in degrees Celsius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Temperature in degrees Celsius (as a float) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_s2482_device_aba40245ed81c0995c4c2de97ca5de032}\label{class_d_s2482_device_aba40245ed81c0995c4c2de97ca5de032}} 
+\index{D\+S2482\+Device@{D\+S2482\+Device}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!D\+S2482\+Device@{D\+S2482\+Device}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String D\+S2482\+Device\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a string representation of this object including the address, temperature, and valid flag. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

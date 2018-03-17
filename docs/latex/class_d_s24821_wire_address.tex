@@ -1,0 +1,159 @@
+\hypertarget{class_d_s24821_wire_address}{}\section{D\+S24821\+Wire\+Address Class Reference}
+\label{class_d_s24821_wire_address}\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+
+
+Holds the 64-\/bit address of a device on a 1-\/wire bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_a150231a85f12d24563dd2546061c1518}\label{class_d_s24821_wire_address_a150231a85f12d24563dd2546061c1518}} 
+\mbox{\hyperlink{class_d_s24821_wire_address_a150231a85f12d24563dd2546061c1518}{D\+S24821\+Wire\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty 1-\/wire address (all 0s) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_a234835cc2611b220716083551b0e9230}\label{class_d_s24821_wire_address_a234835cc2611b220716083551b0e9230}} 
+virtual \mbox{\hyperlink{class_d_s24821_wire_address_a234835cc2611b220716083551b0e9230}{$\sim$\+D\+S24821\+Wire\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_ab6fa5e259b1438d43a88fc5190b9d890}\label{class_d_s24821_wire_address_ab6fa5e259b1438d43a88fc5190b9d890}} 
+\mbox{\hyperlink{class_d_s24821_wire_address_ab6fa5e259b1438d43a88fc5190b9d890}{D\+S24821\+Wire\+Address}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct as a copy of another (copy constructor) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_acb28efccf08e932eefb39012c6b628e3}\label{class_d_s24821_wire_address_acb28efccf08e932eefb39012c6b628e3}} 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \& \mbox{\hyperlink{class_d_s24821_wire_address_acb28efccf08e932eefb39012c6b628e3}{operator=}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&other)
+\begin{DoxyCompactList}\small\item\em Set this address to be the same as another (copy operator) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_a87e420002b42405b2ac1865ffc12638a}\label{class_d_s24821_wire_address_a87e420002b42405b2ac1865ffc12638a}} 
+bool \mbox{\hyperlink{class_d_s24821_wire_address_a87e420002b42405b2ac1865ffc12638a}{operator==}} (const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&other) const
+\begin{DoxyCompactList}\small\item\em Test against another address for equality (comparing the 8-\/byte address values, not pointer) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_a7be80a72fd834ed023e3ce13d167b80d}\label{class_d_s24821_wire_address_a7be80a72fd834ed023e3ce13d167b80d}} 
+\mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \& \mbox{\hyperlink{class_d_s24821_wire_address_a7be80a72fd834ed023e3ce13d167b80d}{with\+Bytes}} (const uint8\+\_\+t $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Set the 1-\/wire address from a buffer of 8 unsigned bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s24821_wire_address_ae4cb62921b014f1d886ad032329a5b1f}{get\+Bit}} (size\+\_\+t bit\+Num) const
+\begin{DoxyCompactList}\small\item\em Get a specific bit from the address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s24821_wire_address_a04139e9c1fb6a2e001c3e1ab1db99cf4}{set\+Bit}} (size\+\_\+t bit\+Num, bool value=true)
+\begin{DoxyCompactList}\small\item\em Set a specific bit from the address. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_address_a67beb121b96c0f236a57f144b6a8a183}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t offset) const
+\begin{DoxyCompactList}\small\item\em Get a byte from the address by offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s24821_wire_address_ae42958bfdb76f2dbeba7e6b27f41cafa}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the address to all 0s. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s24821_wire_address_a1e9409166280dc3a78011698d3c98bc5}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the 1-\/wire address is valid. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_d_s24821_wire_address_a3a2dada65da76880cf47df392273a093}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Outputs the 1-\/wire address as a string, 8 hexadecimal bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s24821_wire_address_a49a60d299efb0f3c17f55f3dededfcdc}\label{class_d_s24821_wire_address_a49a60d299efb0f3c17f55f3dededfcdc}} 
+static const size\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_address_a49a60d299efb0f3c17f55f3dededfcdc}{A\+D\+D\+R\+\_\+\+S\+I\+ZE}} = 8
+\begin{DoxyCompactList}\small\item\em The size of a 1-\/wire address in bytes (8 bytes = 64 bits). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s24821_wire_address_af08b86e9765fd101648f0410cfa77378}{addr}} \mbox{[}\mbox{\hyperlink{class_d_s24821_wire_address_a49a60d299efb0f3c17f55f3dededfcdc}{A\+D\+D\+R\+\_\+\+S\+I\+ZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The 1-\/wire address in wire order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds the 64-\/bit address of a device on a 1-\/wire bus. 
+
+The address is unique for every device, set at the factory. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s24821_wire_address_ae42958bfdb76f2dbeba7e6b27f41cafa}\label{class_d_s24821_wire_address_ae42958bfdb76f2dbeba7e6b27f41cafa}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!clear@{clear}}
+\index{clear@{clear}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void D\+S24821\+Wire\+Address\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the address to all 0s. 
+
+This is done during construction. \mbox{\Hypertarget{class_d_s24821_wire_address_ae4cb62921b014f1d886ad032329a5b1f}\label{class_d_s24821_wire_address_ae4cb62921b014f1d886ad032329a5b1f}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!get\+Bit@{get\+Bit}}
+\index{get\+Bit@{get\+Bit}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{get\+Bit()}{getBit()}}
+{\footnotesize\ttfamily bool D\+S24821\+Wire\+Address\+::get\+Bit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bit\+Num }\end{DoxyParamCaption}) const}
+
+
+
+Get a specific bit from the address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Num} & Bits are numbered 0 $<$= bit\+Num $<$ 64 and are in wire order. Bit 0 is the least significant bit of the least significant byte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_s24821_wire_address_a1e9409166280dc3a78011698d3c98bc5}\label{class_d_s24821_wire_address_a1e9409166280dc3a78011698d3c98bc5}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool D\+S24821\+Wire\+Address\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the 1-\/wire address is valid. 
+
+A 1-\/wire address contains a C\+RC, and this method validates the C\+RC. \mbox{\Hypertarget{class_d_s24821_wire_address_a67beb121b96c0f236a57f144b6a8a183}\label{class_d_s24821_wire_address_a67beb121b96c0f236a57f144b6a8a183}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily uint8\+\_\+t D\+S24821\+Wire\+Address\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a byte from the address by offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The byte to get 0 $<$= offset $<$ 8\\
+\hline
+\end{DoxyParams}
+Note that the bytes are in wire order, L\+SB first. When printed, they\textquotesingle{}re printed in reverse order, M\+SB first like a normal 64-\/bit integer. \mbox{\Hypertarget{class_d_s24821_wire_address_a04139e9c1fb6a2e001c3e1ab1db99cf4}\label{class_d_s24821_wire_address_a04139e9c1fb6a2e001c3e1ab1db99cf4}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{set\+Bit()}{setBit()}}
+{\footnotesize\ttfamily void D\+S24821\+Wire\+Address\+::set\+Bit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bit\+Num,  }\item[{bool}]{value = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Set a specific bit from the address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Num} & Bits are numbered 0 $<$= bit\+Num $<$ 64 and are in wire order. Bit 0 is the least significant bit of the least significant byte.\\
+\hline
+{\em value} & Value to set the bit to. true or false, default is true. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_s24821_wire_address_a3a2dada65da76880cf47df392273a093}\label{class_d_s24821_wire_address_a3a2dada65da76880cf47df392273a093}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String D\+S24821\+Wire\+Address\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Outputs the 1-\/wire address as a string, 8 hexadecimal bytes. 
+
+Note that the presentation of addresses is M\+SB first, so the hex bytes will appear in the opposite order they\textquotesingle{}re in the addr buffer. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_d_s24821_wire_address_af08b86e9765fd101648f0410cfa77378}\label{class_d_s24821_wire_address_af08b86e9765fd101648f0410cfa77378}} 
+\index{D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}!addr@{addr}}
+\index{addr@{addr}!D\+S24821\+Wire\+Address@{D\+S24821\+Wire\+Address}}
+\subsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily uint8\+\_\+t D\+S24821\+Wire\+Address\+::addr\mbox{[}\mbox{\hyperlink{class_d_s24821_wire_address_a49a60d299efb0f3c17f55f3dededfcdc}{A\+D\+D\+R\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The 1-\/wire address in wire order. 
+
+Note that addr is in wire order (L\+SB first). When addresses are displayed to the user at 8 hexadecimal bytes, they\textquotesingle{}re presented in the opposite order! 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

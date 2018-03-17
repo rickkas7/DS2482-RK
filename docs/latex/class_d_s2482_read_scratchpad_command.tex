@@ -1,0 +1,66 @@
+\hypertarget{class_d_s2482_read_scratchpad_command}{}\section{D\+S2482\+Read\+Scratchpad\+Command Class Reference}
+\label{class_d_s2482_read_scratchpad_command}\index{D\+S2482\+Read\+Scratchpad\+Command@{D\+S2482\+Read\+Scratchpad\+Command}}
+
+
+Low-\/level call to read the scratchpad.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Read\+Scratchpad\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_read_scratchpad_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_read_scratchpad_command_a816a8806e254ed36e677eb060820e5de}\label{class_d_s2482_read_scratchpad_command_a816a8806e254ed36e677eb060820e5de}} 
+\mbox{\hyperlink{class_d_s2482_read_scratchpad_command}{D\+S2482\+Read\+Scratchpad\+Command}} \& \mbox{\hyperlink{class_d_s2482_read_scratchpad_command_a816a8806e254ed36e677eb060820e5de}{with\+Max\+Retries}} (size\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Sets the number of times to retry reading the temperature. Default is 3. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_read_scratchpad_command_a41ec4653739bf4d13351a25800fedb91}{get\+Num\+Retries}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of retries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_read_scratchpad_command_a863d13d919605916ed21fd7f7ead9d2a}\label{class_d_s2482_read_scratchpad_command_a863d13d919605916ed21fd7f7ead9d2a}} 
+static \mbox{\hyperlink{class_d_s2482_read_scratchpad_command}{D\+S2482\+Read\+Scratchpad\+Command}} \& \mbox{\hyperlink{class_d_s2482_read_scratchpad_command_a863d13d919605916ed21fd7f7ead9d2a}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&addr, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_read_scratchpad_command}{D\+S2482\+Read\+Scratchpad\+Command}} \&, int status, uint8\+\_\+t $\ast$scratchpad)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Sends a R\+E\+A\+D\+\_\+\+S\+C\+R\+A\+T\+C\+H\+P\+AD command -\/ used internally. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_read_scratchpad_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_read_scratchpad_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Low-\/level call to read the scratchpad. 
+
+The most common use for reading the scratchpad is to get the previously converted temperature value.
+
+You\textquotesingle{}ll typically want to use \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} or \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} instead which uses \mbox{\hyperlink{class_d_s2482_convert_t_command}{D\+S2482\+Convert\+T\+Command}} and \mbox{\hyperlink{class_d_s2482_read_scratchpad_command}{D\+S2482\+Read\+Scratchpad\+Command}} internally.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_read_scratchpad_command_a41ec4653739bf4d13351a25800fedb91}\label{class_d_s2482_read_scratchpad_command_a41ec4653739bf4d13351a25800fedb91}} 
+\index{D\+S2482\+Read\+Scratchpad\+Command@{D\+S2482\+Read\+Scratchpad\+Command}!get\+Num\+Retries@{get\+Num\+Retries}}
+\index{get\+Num\+Retries@{get\+Num\+Retries}!D\+S2482\+Read\+Scratchpad\+Command@{D\+S2482\+Read\+Scratchpad\+Command}}
+\subsubsection{\texorpdfstring{get\+Num\+Retries()}{getNumRetries()}}
+{\footnotesize\ttfamily size\+\_\+t D\+S2482\+Read\+Scratchpad\+Command\+::get\+Num\+Retries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total number of retries. 
+
+This should be 0 most of the time when the scratchpad read successfully the first time. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

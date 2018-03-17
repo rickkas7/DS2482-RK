@@ -1,0 +1,114 @@
+\hypertarget{class_d_s2482_get_temperature_command}{}\section{D\+S2482\+Get\+Temperature\+Command Class Reference}
+\label{class_d_s2482_get_temperature_command}\index{D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}}
+
+
+Gets the temperature of a single sensor.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Get\+Temperature\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_get_temperature_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_command_a49764ff0b2607839893d2362e6b894c2}\label{class_d_s2482_get_temperature_command_a49764ff0b2607839893d2362e6b894c2}} 
+\mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_command_a49764ff0b2607839893d2362e6b894c2}{with\+Max\+Retries}} (size\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Sets the number of times to retry reading the temperature. Default is 3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_command_a74bf428300575cfc62e57bbdb5d358ac}{with\+Conversion\+Size}} (int value)
+\begin{DoxyCompactList}\small\item\em Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_command_a69481de9ee23a9c8c46d724fffc8eff7}\label{class_d_s2482_get_temperature_command_a69481de9ee23a9c8c46d724fffc8eff7}} 
+\mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_command_a69481de9ee23a9c8c46d724fffc8eff7}{with\+Parasitic\+Power}} (bool value=true)
+\begin{DoxyCompactList}\small\item\em Sets whether to use parasitic power or not. The default is false. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_s2482_get_temperature_command_a39a243094572d16385d8ef2ae5180d1f}{get\+Num\+Retries}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of retries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_d_s2482_get_temperature_command_af5778f4b03a65c8dc1290516ac73fe92}{convert\+Temp}} (const uint8\+\_\+t $\ast$scratchpad, int conversion\+Size)
+\begin{DoxyCompactList}\small\item\em Converts the 16-\/bit scratchpad temperature into a float (degrees C) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \& \mbox{\hyperlink{class_d_s2482_get_temperature_command_a91c9ee5048047d209e3dd1effa1ba179}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&addr, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \&, int status, float tempC)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Gets the temperatures for a D\+S18\+B20 sensor on the 1-\/wire bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_get_temperature_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_get_temperature_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Gets the temperature of a single sensor. 
+
+See also \mbox{\hyperlink{class_d_s2482_get_temperature_for_list_command}{D\+S2482\+Get\+Temperature\+For\+List\+Command}} for an efficient way to read multiple sensors on a single 1-\/wire bus.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_get_temperature_command_af5778f4b03a65c8dc1290516ac73fe92}\label{class_d_s2482_get_temperature_command_af5778f4b03a65c8dc1290516ac73fe92}} 
+\index{D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}!convert\+Temp@{convert\+Temp}}
+\index{convert\+Temp@{convert\+Temp}!D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}}
+\subsubsection{\texorpdfstring{convert\+Temp()}{convertTemp()}}
+{\footnotesize\ttfamily float D\+S2482\+Get\+Temperature\+Command\+::convert\+Temp (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{scratchpad,  }\item[{int}]{conversion\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts the 16-\/bit scratchpad temperature into a float (degrees C) 
+
+It takes a conversion size because the least signficant bits in 9-\/11 bit operation are not zereoed -\/ they contain random values. The conversion\+Size is used to mask them off to 0. \mbox{\Hypertarget{class_d_s2482_get_temperature_command_a39a243094572d16385d8ef2ae5180d1f}\label{class_d_s2482_get_temperature_command_a39a243094572d16385d8ef2ae5180d1f}} 
+\index{D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}!get\+Num\+Retries@{get\+Num\+Retries}}
+\index{get\+Num\+Retries@{get\+Num\+Retries}!D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}}
+\subsubsection{\texorpdfstring{get\+Num\+Retries()}{getNumRetries()}}
+{\footnotesize\ttfamily size\+\_\+t D\+S2482\+Get\+Temperature\+Command\+::get\+Num\+Retries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total number of retries. 
+
+This should be 0 most of the time when the sensor was read successfully the first time. \mbox{\Hypertarget{class_d_s2482_get_temperature_command_a91c9ee5048047d209e3dd1effa1ba179}\label{class_d_s2482_get_temperature_command_a91c9ee5048047d209e3dd1effa1ba179}} 
+\index{D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \& D\+S2482\+Get\+Temperature\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{const \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} \&}]{addr,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}} \&, int status, float tempC)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the temperatures for a D\+S18\+B20 sensor on the 1-\/wire bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to. If it\textquotesingle{}s a D\+S2482\+\_\+800, make sure you set the channel as well.\\
+\hline
+{\em addr} & The address you want to read. For a single drop 1-\/wire bus you can pass a newly constructed empty \mbox{\hyperlink{class_d_s24821_wire_address}{D\+S24821\+Wire\+Address}} object which causes S\+K\+I\+P\+\_\+\+R\+OM to be used instead of M\+A\+T\+C\+H\+\_\+\+R\+OM this eliminates the need to search the bus and more efficiently reads when there is only one D\+S18\+B20 on the 1-\/wire bus.\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded.\\
+\hline
+\end{DoxyParams}
+This call executes asynchronously. The completion function is called when complete or an error occurs. The execution time depends on the number of bits. \mbox{\Hypertarget{class_d_s2482_get_temperature_command_a74bf428300575cfc62e57bbdb5d358ac}\label{class_d_s2482_get_temperature_command_a74bf428300575cfc62e57bbdb5d358ac}} 
+\index{D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}!with\+Conversion\+Size@{with\+Conversion\+Size}}
+\index{with\+Conversion\+Size@{with\+Conversion\+Size}!D\+S2482\+Get\+Temperature\+Command@{D\+S2482\+Get\+Temperature\+Command}}
+\subsubsection{\texorpdfstring{with\+Conversion\+Size()}{withConversionSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_get_temperature_command}{D\+S2482\+Get\+Temperature\+Command}}\& D\+S2482\+Get\+Temperature\+Command\+::with\+Conversion\+Size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the conversion size in bits. Default is C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The number of bits the D\+S18\+B20s are configured for. The constants are defined in the \mbox{\hyperlink{class_d_s2482_command}{D\+S2482\+Command}} class and are one of\+: C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+9\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+10\+B\+IT, C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+11\+B\+IT, or C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+12\+B\+IT. At 9 bits, the resolution is 1/2 degrees C. At 12 bits, the resolution is 1/16 degrees C. The factory default hardware setting is 12 bits. Note that you must have use D\+S2482\+Set\+Config to set the conversion size first; just reducing the value in this call without changing the D\+S18\+B20 configuration will result in invalid readings.\\
+\hline
+\end{DoxyParams}
+In the unusual situation that you have sensors of different bit settings, select the largest bit setting. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}

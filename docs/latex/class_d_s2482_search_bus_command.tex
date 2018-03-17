@@ -1,0 +1,84 @@
+\hypertarget{class_d_s2482_search_bus_command}{}\section{D\+S2482\+Search\+Bus\+Command Class Reference}
+\label{class_d_s2482_search_bus_command}\index{D\+S2482\+Search\+Bus\+Command@{D\+S2482\+Search\+Bus\+Command}}
+
+
+Finds all of the devices on the 1-\/wire bus.  
+
+
+
+
+{\ttfamily \#include $<$D\+S2482-\/\+R\+K.\+h$>$}
+
+Inheritance diagram for D\+S2482\+Search\+Bus\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_s2482_search_bus_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \& \mbox{\hyperlink{class_d_s2482_search_bus_command_acf9ce76a212b1a927180ba4391a90f54}{get\+Device\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the device list that was passed into run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_s2482_search_bus_command_a7425f532612d42aa2685597085f8a27f}\label{class_d_s2482_search_bus_command_a7425f532612d42aa2685597085f8a27f}} 
+const \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \& \mbox{\hyperlink{class_d_s2482_search_bus_command_a7425f532612d42aa2685597085f8a27f}{get\+Device\+List}} () const
+\begin{DoxyCompactList}\small\item\em Get the device list that was passed into run a const object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_d_s2482_search_bus_command}{D\+S2482\+Search\+Bus\+Command}} \& \mbox{\hyperlink{class_d_s2482_search_bus_command_ad45cdd2c6e517f13cf18bd28e58061bb}{run}} (\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&\mbox{\hyperlink{class_d_s2482_command_a54a41fb8a610ef2077f5e5377771aaf3}{parent}}, \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&device\+List, std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_search_bus_command}{D\+S2482\+Search\+Bus\+Command}} \&, int status)$>$ completion)
+\begin{DoxyCompactList}\small\item\em Run a D\+S18\+B20 search bus command to find all of the D\+S18\+B20s on the 1-\/wire bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s2482_search_bus_command_afeaf69274324e8dbeebede05c02d9c18}\label{class_d_s2482_search_bus_command_afeaf69274324e8dbeebede05c02d9c18}} 
+class {\bfseries D\+S2482}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Finds all of the devices on the 1-\/wire bus. 
+
+If you have a multi-\/drop D\+S18\+B20 setup, this will find the 64-\/bit device addresses for every sensor on the 1-\/wire bus.
+
+Searching the 1-\/wire bus temporarily requires about 800 bytes of heap space for the duration of the search.
+
+As with all command objects, you do not typically construct one of these objects. Instead, use the static run method to handle allocating, initializing, and queueing the command. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_s2482_search_bus_command_acf9ce76a212b1a927180ba4391a90f54}\label{class_d_s2482_search_bus_command_acf9ce76a212b1a927180ba4391a90f54}} 
+\index{D\+S2482\+Search\+Bus\+Command@{D\+S2482\+Search\+Bus\+Command}!get\+Device\+List@{get\+Device\+List}}
+\index{get\+Device\+List@{get\+Device\+List}!D\+S2482\+Search\+Bus\+Command@{D\+S2482\+Search\+Bus\+Command}}
+\subsubsection{\texorpdfstring{get\+Device\+List()}{getDeviceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}}\& D\+S2482\+Search\+Bus\+Command\+::get\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the device list that was passed into run. 
+
+You can use this from the completion, however it\textquotesingle{}s not usually necessary since in most cases you\textquotesingle{}ll be able to access the variable you originally passed to run from your capture. But if for some reason you don\textquotesingle{}t want to capture it, you can use this. \mbox{\Hypertarget{class_d_s2482_search_bus_command_ad45cdd2c6e517f13cf18bd28e58061bb}\label{class_d_s2482_search_bus_command_ad45cdd2c6e517f13cf18bd28e58061bb}} 
+\index{D\+S2482\+Search\+Bus\+Command@{D\+S2482\+Search\+Bus\+Command}!run@{run}}
+\index{run@{run}!D\+S2482\+Search\+Bus\+Command@{D\+S2482\+Search\+Bus\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s2482_search_bus_command}{D\+S2482\+Search\+Bus\+Command}} \& D\+S2482\+Search\+Bus\+Command\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_s2482}{D\+S2482}} \&}]{parent,  }\item[{\mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} \&}]{device\+List,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_d_s2482_search_bus_command}{D\+S2482\+Search\+Bus\+Command}} \&, int status)$>$}]{completion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run a D\+S18\+B20 search bus command to find all of the D\+S18\+B20s on the 1-\/wire bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The \mbox{\hyperlink{class_d_s2482}{D\+S2482}} you want to send the command to. If it\textquotesingle{}s a D\+S2482\+\_\+800, make sure you set the channel as well.\\
+\hline
+{\em device\+List} & The \mbox{\hyperlink{class_d_s2482_device_list}{D\+S2482\+Device\+List}} object you want to save the list of devices to. The object is cleared before use.\\
+\hline
+{\em completion} & The completion handler lambda function. status is the result status of the call; if \mbox{\hyperlink{class_d_s2482_command_a8ffcf84807c97928dbfc61d75788e32b}{D\+S2482\+Command\+::\+R\+E\+S\+U\+L\+T\+\_\+\+D\+O\+NE}} then the call succeeded. If it\textquotesingle{}s any other value an error occurred.\\
+\hline
+\end{DoxyParams}
+This call executes asynchronously. The completion function is called when complete or an error occurs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/D\+S2482-\/\+R\+K.\+h\item 
+src/D\+S2482-\/\+R\+K.\+cpp\end{DoxyCompactItemize}
