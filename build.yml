@@ -1,4 +1,8 @@
 - build: examples/01-single-drop
-  photon: [0.7.0]
-  p1: [0.7.0]
-  
+  photon: [0.6.3, 0.7.0, 0.8.0-rc.8]
+  p1: [latest]
+  electron: [latest]
+- build: examples/02-multi-drop
+  photon: [latest]
+- build: examples/03-simple-class
+  photon: [latest]
