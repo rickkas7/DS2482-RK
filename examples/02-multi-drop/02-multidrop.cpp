@@ -2,7 +2,7 @@
 
 SerialLogHandler logHandler;
 
-DS2482 ds(Wire, 3);
+DS2482 ds(Wire, 0);
 
 DS2482DeviceListStatic<10> deviceList;
 const unsigned long CHECK_PERIOD = 30000;

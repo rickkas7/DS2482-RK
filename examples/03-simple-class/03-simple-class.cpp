@@ -73,7 +73,7 @@ void TestClass::check() {
 	});
 }
 
-TestClass testClass(7);
+TestClass testClass(0);
 
 void setup() {
 	Serial.begin(9600);

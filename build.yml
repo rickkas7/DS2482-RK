@@ -1,8 +1,11 @@
 - build: examples/01-single-drop
-  photon: [0.6.3, 0.7.0, 0.8.0-rc.8]
+  photon: [0.6.3, 0.7.0, 0.8.0-rc.12, 1.0.0]
   p1: [latest]
-  electron: [latest]
+  electron: [0.6.4, 1.0.0]
 - build: examples/02-multi-drop
-  photon: [latest]
+  photon: [1.0.0]
+  argon: [0.8.0-rc.27]
+  boron: [0.8.0-rc.27]
+  xenon: [0.8.0-rc.27]
 - build: examples/03-simple-class
   photon: [latest]

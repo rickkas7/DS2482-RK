@@ -2,7 +2,7 @@
 
 SerialLogHandler logHandler;
 
-DS2482 ds(Wire, 3);
+DS2482 ds(Wire, 0);
 
 const unsigned long CHECK_PERIOD = 30000;
 unsigned long lastCheck = 5000 - CHECK_PERIOD;
